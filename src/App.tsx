@@ -8,6 +8,8 @@ import women from "../src/assets/women.jpg";
 import ring from "../src/assets/ring.png";
 import react from "../src/assets/react.png"
 import health from "../src/assets/health.png"
+import watch1 from "../src/assets/watch1.jpg"
+import watch2 from "../src/assets/watch2.jpg"
 
 export default function App() {
   const images: string[] = [
@@ -87,8 +89,13 @@ export default function App() {
         </div>
       </div>
       </div>
-
       </div>
+      <div className="mx-auto max-w-2xl" style={{textAlign: "center"}}>
+      <div className="text-2xl text-[#fa1858]">Fitness</div>
+      <div className="text-6xl mt-5 mb-10">Better by every measure.</div>
+      <div className="text-xl mb-10">Whether you’re training for a marathon or swimming lengths, Apple Watch Series 11 serves up endless ways to work out. And it uses helpful metrics to count every move, so you know how to push harder and train smarter. Let’s go — the starting line is on your wrist.</div>
+      </div>
+      <div className="max-w-2xl mx-auto">
       <div className=" text-4xl font-bold">Apple Watch</div>
       <div className="flex">
       <div className="mr-12 font-bold text-xl cursor-pointer">
@@ -121,6 +128,7 @@ export default function App() {
       <div className="cursor-pointer">
       <div className="mt-3.5 mb-1 ">Compare Watch</div>
       <div>Why Apple Watch</div>
+      </div>
       </div>
     </div>
   )
