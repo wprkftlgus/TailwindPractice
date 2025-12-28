@@ -19,8 +19,21 @@ export default function App() {
   console.log(currentIndex);
   return (
     <div>
-      <div>Get the highlights.</div>
-      <div className="w-200 overflow-hidden">
+      <div className="flex w-full p-2 bg-gray-50 z-1 fixed">
+      <div className="mx-auto flex justify-between gap-50 items-center">
+      <div className="font-bold">Apple</div>
+      <div className="flex cursor-pointer gap-1.5 text-xs">
+      <div>Overview</div>
+      <div>Why Apple Watch</div>
+      <div>Tech Specs</div>
+      <div>buy</div>
+      </div>
+      </div>
+      </div>
+      <div className="w-full">
+      <div className="mx-auto font-bold text-4xl mx-auto pb-15 pt-25">Get the highlights.</div>
+      </div>
+      <div className="w-300 overflow-hidden">
         <div 
         className="flex transition-transform duration-500 ease-in-out"
         style={{ transform: `translateX(-${currentIndex * 100}%)`}}>
