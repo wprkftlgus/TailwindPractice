@@ -1,14 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import picture1 from "../src/assets/1.jpg";
 import picture2 from "../src/assets/2.jpg";
 import picture3 from "../src/assets/3.jpg";
 import picture4 from "../src/assets/4.jpg";
 import picture5 from "../src/assets/5.jpg";
+import women from "../src/assets/women.jpg";
 
 export default function App() {
   const images: string[] = [
     picture1,picture2,picture3,picture4,picture5
-  ];
+  ]; 
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const nextSlide = () => {
     setCurrentIndex((prev) => prev === images.length -1 ? 0 : prev + 1)
@@ -16,13 +17,18 @@ export default function App() {
   const prevSlide = () => {
     setCurrentIndex((prev) => prev === 0 ? images.length - 1 : prev - 1)
   }
-  console.log(currentIndex);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      nextSlide();
+    }, 4500);
+    return() => clearTimeout(timer);
+  }, [currentIndex]);
   return (
-    <div>
+    <div className=" font-lexend">
       <div className="flex w-full p-2 bg-gray-50 z-1 fixed">
-      <div className="mx-auto flex justify-between gap-50 items-center">
+      <div className="mx-auto flex justify-between  items-center">
       <div className="font-bold">Apple</div>
-      <div className="flex cursor-pointer gap-1.5 text-xs">
+      <div className="flex cursor-pointer gap-2 text-xs">
       <div>Overview</div>
       <div>Why Apple Watch</div>
       <div>Tech Specs</div>
@@ -45,6 +51,20 @@ export default function App() {
       </div>
       <button className="w-20 h-20 bg-amber-700" onClick={prevSlide}>prev</button>
       <button className="w-20 h-20 bg-amber-700" onClick={nextSlide}>next</button>
+      <div className="w-full" style={{backgroundImage: `url(${women})`, height: 1000, 
+      backgroundSize: "cover", backgroundPosition: "center"}}>
+      <div className=" mx-auto w-300 pt-30">
+      <div className="text-white font-bold max-w-[525px] ml-140">
+      <div className="text-[#50c1fc] font-medium">Health</div> 
+      <div className="text-6xl">Know <br />your body<br /> by heart.</div>
+      <div className="mt-10">The more insights you have, the more empowered you are to take action. From the ECG app to the Vitals app and more, Apple Watch Series 11 provides a bigger picture of your health, so you can stay informed. And now Series 11 takes the next big step in heart health with a pioneering feature — hypertension notifications.1</div>
+      </div>
+      </div>
+      </div>
+      <div className="w-full backdrop-[blur(40px)_brightness(60%)bg-white/30] " style={{backgroundImage: `url(${women})`, height: 1000, 
+      backgroundSize: "cover", backgroundPosition: "center"}}>
+      
+      </div>
     </div>
   )
 }
