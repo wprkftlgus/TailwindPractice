@@ -1,2 +1,10 @@
 @import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+.bg-blur {
+  filter: blur(8px) brightness(60%);
+  transition: filter 1s ease;
+}
+.bg-fixed {
+  background-attachment: fixed;
+}

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import picture1 from "../src/assets/1.jpg";
 import picture2 from "../src/assets/2.jpg";
 import picture3 from "../src/assets/3.jpg";
@@ -28,6 +28,28 @@ export default function App() {
     }, 4500);
     return() => clearTimeout(timer);
   }, [currentIndex]);
+
+  const trigger = useRef<HTMLDivElement>(null);
+  const bg = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const triggerRef = trigger.current;
+    const bgRef = bg.current;
+
+    if (!triggerRef || !bgRef) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+
+        if (entry.isIntersecting) {
+          bgRef.classList.add("bg-fixed", "bg-blur");
+        } else{bgRef.classList.remove("bg-fixed", "bg-blur")}
+      }, { threshold: 0.5 }
+    );
+    observer.observe(triggerRef);
+  },[]);
+
   return (
     <div className=" font-lexend">
       <div className="flex w-full p-2 bg-gray-50 z-1 fixed">
@@ -56,8 +78,11 @@ export default function App() {
       </div>
       <button className="w-20 h-20 bg-amber-700" onClick={prevSlide}>prev</button>
       <button className="w-20 h-20 bg-amber-700" onClick={nextSlide}>next</button>
-      <div className="w-full" style={{backgroundImage: `url(${women})`, height: 1000, 
+      <div className="relative w-full h-[1200px]">
+      <div ref={bg} className="absolute inset-0" style={{backgroundImage: `url(${women})`, 
       backgroundSize: "cover", backgroundPosition: "center"}}>
+      </div>
+      <div ref={trigger} className="relative">
       <div className=" mx-auto w-300 pt-30">
       <div className="text-white font-bold max-w-[525px] ml-140">
       <div className="text-[#50c1fc] font-medium">Health</div> 
@@ -65,10 +90,7 @@ export default function App() {
       <div className="mt-10">The more insights you have, the more empowered you are to take action. From the ECG app to the Vitals app and more, Apple Watch Series 11 provides a bigger picture of your health, so you can stay informed. And now Series 11 takes the next big step in heart health with a pioneering feature — hypertension notifications.1</div>
       </div>
       </div>
-      </div>
-      <div className="w-full backdrop-[blur(40px)_brightness(60%)bg-white/30] " style={{backgroundImage: `url(${women})`, height: 1100, 
-      backgroundSize: "cover", backgroundPosition: "center"}}>
-      <div className=" max-w-3xl mx-auto pt-20">
+      <div className=" max-w-3xl mx-auto pt-70">
       <div className="text-white font-bold">
         <div className=" text-4xl max-w-100">Get notified of chronic high blood pressure.</div>
         <div className="mt-2.5 max-w-150">Hypertension, or high blood pressure, impacts over 1.3 billion adults worldwide and is a leading cause of heart attack, stroke and kidney disease. The condition frequently goes undiagnosed because it often has no symptoms — and even during a doctor’s visit, with a single measurement it can be easily missed.</div>
@@ -87,6 +109,7 @@ export default function App() {
         <div style={{backgroundImage: `url(${health})`, width: 25, height:40, backgroundRepeat: "no-repeat", backgroundSize: "cover"}}></div>
         <div>Set up a blood pressure log. If you receive a hypertension notification and have access to a blood pressure cuff, you can track your blood pressure in the Health app on iPhone to create a report that will lead to more meaningful conversations with your healthcare provider.</div>
         </div>
+      </div>
       </div>
       </div>
       </div>
