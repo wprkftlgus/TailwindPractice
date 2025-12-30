@@ -18,6 +18,8 @@ import watch1 from "../src/assets/watch1.jpg"
 import watch2 from "../src/assets/watch2.png"
 import run from "../src/assets/run.png"
 import clock from "../src/assets/clock.png"
+import girlrunning from "../src/assets/girlrunning.jpg"
+import color from "../src/assets/color.png"
 
 export default function App() {
   const images: string[] = [
@@ -72,8 +74,8 @@ export default function App() {
   },[]);
 
   return (
-    <div className=" font-lexend">
-      <div className="flex w-full p-2 bg-gray-50 z-1 fixed">
+    <div className="overflow-x-hidden font-lexend">
+      <div className="flex w-full p-2 bg-gray-50 z-2 fixed">
       <div className="mx-auto flex justify-between  items-center">
       <div className="font-bold">Apple</div>
       <div className="flex cursor-pointer gap-2 text-xs">
@@ -87,7 +89,7 @@ export default function App() {
       <div className="w-full">
       <div className="mx-auto font-bold text-4xl mx-auto pb-15 pt-25">Get the highlights.</div>
       </div>
-      <div className="w-300 overflow-hidden">
+      <div className="w-200 overflow-hidden">
         <div 
         className="flex transition-transform duration-500 ease-in-out"
         style={{ transform: `translateX(-${currentIndex * 100}%)`}}>
@@ -104,8 +106,8 @@ export default function App() {
       backgroundSize: "cover", backgroundPosition: "center"}}>
       </div>
       <div className="relative">
-      <div className=" mx-auto w-300 pt-30">
-      <div className="text-white font-bold max-w-[525px] ml-140">
+      <div className=" mx-auto pt-30">
+      <div className="text-white font-bold  ml-140">
       <div className="text-[#50c1fc] font-medium">Health</div> 
       <div className="text-6xl">Know <br />your body<br /> by heart.</div>
       <div className="mt-10">The more insights you have, the more empowered you are to take action. From the ECG app to the Vitals app and more, Apple Watch Series 11 provides a bigger picture of your health, so you can stay informed. And now Series 11 takes the next big step in heart health with a pioneering feature — hypertension notifications.1</div>
@@ -134,7 +136,7 @@ export default function App() {
       </div>
       <div className="text-white">
       <div className="text-2xl pt-30 mb-5">More features to empower your health.</div>
-      <div className="flex w-1000 gap-3">
+      <div className=" overflow-hidden flex gap-3">
       <div className="flex flex-col">
       <div className=" w-110 h-75 relative">
       <div className="inset-0 absolute" style={{backgroundImage: `url(${apple1})`, borderRadius: 20, backgroundRepeat: "no-repeat", backgroundSize: "cover"}}></div>
@@ -182,21 +184,32 @@ export default function App() {
       <div ref={trigger2} className="text-6xl mt-5 mb-10">Better by every measure.</div>
       <div className="text-xl mb-10">Whether you’re training for a marathon or swimming lengths, Apple Watch Series 11 serves up endless ways to work out. And it uses helpful metrics to count every move, so you know how to push harder and train smarter. Let’s go — the starting line is on your wrist.</div>
       </div>
-      <div>
-       <div className="flex">
-       <div style={{backgroundImage: `url(${watch1})`, width: 600, height: 600, backgroundSize: "contain", backgroundRepeat: "no-repeat" }}></div>
-       <div className="flex flex-col">
+      <div className="mx-auto grid grid-cols-2 grid-rows-2 gap-x-30 gap-y-1">
+       <div className="translate-x-[calc(50vw-500px)]" style={{backgroundImage: `url(${watch1})`, width: 600, height: 600, backgroundSize: "contain", backgroundRepeat: "no-repeat" }}></div>
+       <div className="flex flex-col z-1 mt-5">
        <div style={{backgroundImage: `url(${run})`, width: 50, height: 50, backgroundSize: "contain", backgroundRepeat: "no-repeat" }}></div>
        <div className="text-xs w-60 pt-2">A refreshed Workout app. An improved layout highlights four new corner buttons, making it even quicker to access your go‑to features like Pacer, Race Route and Custom Workout.</div>
        </div>
-       </div>
-       <div className="flex">
-       <div className="flex flex-col">
+       <div className="flex flex-col z-1 translate-x-[calc(55vw-400px)] translate-y-55">
        <div style={{backgroundImage: `url(${clock})`, width: 50, height: 50, backgroundSize: "contain", backgroundRepeat: "no-repeat" }}></div>
        <div className="text-xs w-60 pt-2">Run circles around your Activity rings. Move. Exercise. Stand. The Activity app can track your daily activity. You can easily pause your rings or adjust your goals for each day of the week.</div>
        </div>
-       <div className="" style={{backgroundImage: `url(${watch2})`, width: 600, height: 600, backgroundSize: "contain", backgroundRepeat: "no-repeat" }}></div>
+       <div className="relative -translate-x-20 -translate-y-55" style={{backgroundImage: `url(${watch2})`, width: 600, height: 600, backgroundSize: "contain", backgroundRepeat: "no-repeat" }}></div>
       </div>
+      <div className="text-white absolute w-full">
+       <div className="absolute inset-0" style={{backgroundImage: `url(${girlrunning})`, height: 1400, backgroundSize: "cover", backgroundRepeat: "no-repeat"}}>
+       <div className="max-w-2xl mx-auto w-350 pt-35">
+       <div className="text-3xl max-w-70 mb-3">To know you is to move you.</div> 
+       <div className="text-base max-w-90">Now, in addition to detailed insights, Apple Watch Series 11 provides personalised fitness encouragement. With Apple Intelligence from your nearby iPhone, Workout Buddy gives you audible motivation in real time. Together with Workout media, Heart Rate Zones and Custom Workouts, there are even more brains behind the burn.</div>
+       </div>
+       <div className="max-w-2xl mx-auto w-350 pt-35">
+        <div className=" items-center bg-center" style={{backgroundImage: `url(${color})`,width: 680, height: 200 ,backgroundSize: "contain", backgroundRepeat: "no-repeat"}}>
+          <div className="text-3xl max-w-70 mb-3">Way to go! That was your fastest 5K ever.</div> 
+        </div>
+       
+       <div className="text-base max-w-90">Meet your new Workout Buddy. A brand‑new text‑to‑speech model generates personalised pep talks using voice data from an Apple Fitness+ trainer, so it has the right energy, style and tone for a workout.4 Time to buddy up.</div>
+       </div>
+       </div>
       </div>
       <div className="max-w-2xl mx-auto">
       <div className=" text-4xl font-bold">Apple Watch</div>
