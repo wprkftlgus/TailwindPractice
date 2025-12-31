@@ -278,13 +278,140 @@ export default function App() {
         <li className="pb-2">When angled away from the user as compared with Apple Watch Series 9 or earlier.</li>
         <li className="pb-2">All‑day battery life is based on the following use: 300 time checks, 90 notifications, 15 minutes of app use and a 60‑minute workout with music playback from Apple Watch via Bluetooth, over the course of 18 hours; Apple Watch SE 3 (GPS) usage includes connection to iPhone via Bluetooth during the entire 18‑hour test; Apple Watch SE 3 (GPS + Cellular) usage includes a total of 4 hours of cellular connection and 14 hours of connection to iPhone via Bluetooth over the course of 18 hours. Battery life in Low Power Mode including sleep tracking is based on the following use: 430 time checks, 130 notifications, 20 minutes of app use, a 60‑minute workout with music playback from Apple Watch via Bluetooth and 6 hours of sleep tracking, over the course of 32 hours; Apple Watch SE 3 (GPS) usage includes connection to iPhone via Bluetooth during the entire 32‑hour test; Apple Watch SE 3 (GPS + Cellular) usage includes on‑demand cellular connection and 24 hours of connection to iPhone via Bluetooth over the course of 32 hours. Testing conducted by Apple in July and August 2025 using pre‑production Apple Watch SE 3 (GPS) and Apple Watch SE 3 (GPS + Cellular), each paired with an iPhone; all devices tested with pre‑release software. Battery life varies by use, configuration, mobile network, signal strength and many other factors; actual results will vary.</li>
        </ol>
-       <div className="text-xs pt-3">
+       <div className="text-xs pt-3 border-b border-gray-400 pb-1">
         <div className="pb-3">Apple Watch Ultra 3, Apple Watch Series 11 and Apple Watch SE 3 require iPhone 11 or later with iOS 26 or later.</div>
         <div className="pb-3">Straps subject to availability.</div>
         <div className="pb-3">To use Apple Pay you need a supported card from a participating card issuer. To check if your card is compatible with Apple Pay, contact your card issuer.</div>
-        <div className="pb-3">Apple Pay is not available in all markets. View Apple Pay countries and regions.</div>
-        <div className="pb-3">Features are subject to change. Some features, applications and services may not be available in all regions or all languages. View complete list.</div>
+        <div className="pb-3">Apple Pay is not available in all markets. <a className="underline cursor-pointer text-black">View Apple Pay countries and regions.</a></div>
+        <div className="pb-3">Features are subject to change. Some features, applications and services may not be available in all regions or all languages. <a className="underline cursor-pointer text-black">View complete list.</a></div>
        </div>
+       <div>
+        <div className="flex items-center gap-3 text-xs pt-5 pb-5">
+        <svg  viewBox="0 0 180 180" className=" h-4 w-4">
+         <path fill="#000" d="m108,35
+             c5.587379,-6.7633 9.348007,-16.178439 8.322067,-25.546439
+             c-8.053787,0.32369 -17.792625,5.36682 -23.569427,12.126399
+             c-5.177124,5.985922 -9.711121,15.566772 -8.48777,24.749359
+             c8.976891,0.69453 18.147476,-4.561718 23.73513,-11.329308" />
+         <path fill="#000" d="M88,162.415214
+             c-12.24469,0 -16.072174,6.151901 -26.213551,6.550446
+             c-10.52422,0.398254 -18.538303,-10.539917 -25.26247,-20.251053
+             c-13.740021,-19.864456 -24.24024,-56.132286 -10.1411,-80.613663
+             c7.004152,-12.157551 19.521101,-19.85622 33.10713,-20.053638
+             c10.334515,-0.197132 20.089069,6.952717 26.406689,6.952717" />
+           <path fill="#000" d="M85,55
+             c6.313614,0 18.167473,-8.59832 30.628998,-7.335548
+             c5.21682,0.217129 19.860519,2.1073 29.263641,15.871029
+             c-0.75766,0.469692 -17.472931,10.200527 -17.291229,30.443592
+             c0.224838,24.213104 21.241287,32.270615 21.474121,32.373459
+             c-0.177704,0.56826 -3.358078,11.482742 -11.072464,22.756622
+             c-6.668747,9.746841 -13.590027,19.457977 -24.493088,19.659103
+             c-10.713348,0.197403 -14.158287,-6.353043 -26.406677,-6.353043" />
+        </svg>
+        <div>&gt;</div>
+        <div>Watch</div>
+        <div>&gt;</div>
+        <div>Apple Watch Series 11</div>
+        </div>
+        <div className="flex text-sm">
+          <div className="w-55">
+            <div>
+            <div className="font-black">Shop and Learn</div>
+            <div className="cursor-pointer hover:underline inline-block mr-40">Store</div>
+            <div className="cursor-pointer hover:underline inline-block mr-40">Mac</div>
+            <div className="cursor-pointer hover:underline inline-block mr-40">iPad</div>
+            <div className="cursor-pointer hover:underline inline-block mr-40">iPhone</div>
+            <div className="cursor-pointer hover:underline inline-block mr-40">Watch</div>
+            <div className="cursor-pointer hover:underline inline-block mr-40">Vision</div>
+            <div className="cursor-pointer hover:underline inline-block mr-40">AirPods</div>
+            <div className="cursor-pointer hover:underline inline-block mr-40">AirTag</div>
+            <div className="cursor-pointer hover:underline inline-block mr-40">Accessories</div>
+            <div className="cursor-pointer hover:underline inline-block ">Gift Cards</div>
+            </div>
+            <div>
+            <div className="font-black">Apple Wallet</div>
+            <div className="cursor-pointer hover:underline inline-block mr-40">Wallet</div>
+            <div className="cursor-pointer hover:underline inline-block">Apple Pay</div>  
+            </div>
+          </div>
+          <div className="w-55">
+            <div>
+            <div className="font-black">Account</div>
+            <div className="cursor-pointer hover:underline inline-block">Manage Your Apple Account</div>
+            <div className="cursor-pointer hover:underline inline-block">Apple Store Account</div>
+            <div className="cursor-pointer hover:underline inline-block">iCloud.com</div>
+            </div>
+            <div>
+              <div className="font-black">Entertainment</div>
+              <div className="cursor-pointer hover:underline inline-block mr-20">Apple One</div>
+              <div className="cursor-pointer hover:underline inline-block mr-20">Apple TV</div>
+              <div className="cursor-pointer hover:underline inline-block mr-20">Apple Music</div>
+              <div className="cursor-pointer hover:underline inline-block mr-20">Apple Arcade</div>
+              <div className="cursor-pointer hover:underline inline-block mr-20">Apple Fitness+</div>
+              <div className="cursor-pointer hover:underline inline-block mr-20">Apple News+</div>
+              <div className="cursor-pointer hover:underline inline-block mr-20">Apple Podcasts</div>
+              <div className="cursor-pointer hover:underline inline-block mr-20">Apple Books</div>
+              <div className="cursor-pointer hover:underline inline-block mr-20">Apple Store</div>
+            </div>
+          </div>
+          <div className="w-55">
+            <div className="font-black">Apple Store</div>
+            <div className="cursor-pointer hover:underline inline-block mr-20">Find a Store</div>
+            <div className="cursor-pointer hover:underline inline-block mr-20">Genius Bar</div>
+            <div className="cursor-pointer hover:underline inline-block mr-20">Today at Apple</div>
+            <div className="cursor-pointer hover:underline inline-block">Group Reservations</div>
+            <div className="cursor-pointer hover:underline inline-block">Apple Summer Camp</div>
+            <div className="cursor-pointer hover:underline inline-block mr-20">Apple Store App</div>
+            <div className="cursor-pointer hover:underline inline-block">Certified Refurbished</div>
+            <div className="cursor-pointer hover:underline inline-block mr-20">Apple Trade In</div>
+            <div className="cursor-pointer hover:underline inline-block mr-20">Financing</div>
+            <div className="cursor-pointer hover:underline inline-block mr-20">Order Status</div>
+            <div className="cursor-pointer hover:underline inline-block mr-20">Shopping Help</div>
+          </div>
+          <div className="w-55">
+            <div>
+            <div className="font-black">For Business</div>
+            <div className="cursor-pointer hover:underline inline-block">Apple and Business</div>
+            <div className="cursor-pointer hover:underline inline-block">Shop for Business</div>
+            </div>
+            <div>
+            <div className="font-black">For Education</div>
+            <div className="cursor-pointer hover:underline inline-block">Apple and Education</div>
+            <div className="cursor-pointer hover:underline inline-block">Shop for University</div>
+            </div>
+            <div>
+            <div className="font-black">For Healthcare</div>
+            <div  className="cursor-pointer hover:underline inline-block">Apple and Healthcare</div>
+            </div>
+            <div>
+            <div className="font-black">For Goverment</div>
+            <div  className="cursor-pointer hover:underline inline-block">Apple and Goverment</div>
+            </div>
+          </div>
+          <div className="w-55">
+            <div>
+            <div className="font-black">Apple Values</div>
+            <div>Accessibility</div>
+            <div>Education</div>
+            <div>Environment</div>
+            <div>Privacy</div>
+            <div>Supply Chain Innovation</div>  
+            </div>
+            <div>
+            <div className="font-black">About People</div>
+            <div>Newsroom</div>
+            <div>Apple Leadership</div>
+            <div>Career Opportunities</div>
+            <div>Warranty</div>
+            <div>Investors</div> 
+            <div>Ethics & Compliance</div>  
+            <div>Events</div>  
+            <div>European Job Creation</div>  
+            <div>Contact Apple</div>   
+            </div>
+          </div>
+        </div>
+      </div>
       </div>
       </div>
     </div>
