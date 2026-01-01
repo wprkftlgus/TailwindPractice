@@ -20,6 +20,13 @@ import run from "../src/assets/run.png"
 import clock from "../src/assets/clock.png"
 import girlrunning from "../src/assets/girlrunning.jpg"
 import color from "../src/assets/color.png"
+import watchmulti from "../src/assets/2watch.PNG"
+import icon1 from "../src/assets/icon1.png"
+import icon2 from "../src/assets/icon2.png"
+import icon3 from "../src/assets/icon3.png"
+import icon4 from "../src/assets/icon4.png"
+import icon5 from "../src/assets/icon5.png"
+import icon6 from "../src/assets/icon6.png"
 
 export default function App() {
   const images: string[] = [
@@ -75,14 +82,14 @@ export default function App() {
 
   return (
     <div className="overflow-x-hidden overflow-y-hidden font-lexend">
-      <div className="flex w-full p-2 bg-gray-50 z-2 fixed">
-      <div className="mx-auto gap-50 flex justify-between  items-center">
-      <div className="font-bold">Apple Watch Series 11</div>
-      <div className="flex cursor-pointer gap-5 text-xs items-center">
+      <div className="flex w-full p-3 border-b border-gray-300 bg-gray-50 z-2 fixed">
+      <div className="mx-auto gap-100 flex justify-between  items-center">
+      <div className="font-bold text-xl cursor-pointer">Apple Watch Series 11</div>
+      <div className="flex cursor-pointer gap-6 text-xs items-center">
       <div>Overview</div>
       <div>Why Apple Watch</div>
       <div>Tech Specs</div>
-      <div className="bg-blue-700 px-2 py-1 text-white" style={{borderRadius: 15}}>buy</div>
+      <div className="bg-blue-500 px-3 py-1 text-white font-bold" style={{borderRadius: 15}}>Buy</div>
       </div>
       </div>
       </div>
@@ -184,7 +191,7 @@ export default function App() {
       <div className="mx-auto w-200 mt-30" style={{textAlign: "center"}}>
       <div className="text-3xl font-bold text-[#fa1858]">Fitness</div>
       <div ref={trigger2} className="text-8xl font-bold mt-5 mb-10">Better by every measure.</div>
-      <div className="text-2xl mb-10">Whether you’re training for a marathon or swimming lengths, Apple Watch Series 11 serves up endless ways to work out. And it uses helpful metrics to count every move, so you know how to push harder and train smarter. Let’s go — the starting line is on your wrist.</div>
+      <div className="text-2xl mb-10 text-gray-600">Whether you’re training for a marathon or swimming lengths, Apple Watch Series 11 serves up endless ways to work out. And it uses helpful metrics to count every move, so you know how to push harder and train smarter. Let’s go — the starting line is on your wrist.</div>
       </div>
       <div className="mx-auto grid grid-cols-2 grid-rows-2 gap-x-60 gap-y-1">
        <div className="translate-x-[calc(40vw-600px)]" style={{backgroundImage: `url(${watch1})`, width: 950, height: 950, backgroundSize: "contain", backgroundRepeat: "no-repeat" }}></div>
@@ -214,38 +221,72 @@ export default function App() {
        </div>
        </div>
       </div>
-      <div className="relative max-w-2xl mx-auto">
-      <div className=" text-4xl font-bold">Apple Watch</div>
-      <div className="flex">
-      <div className="mr-12 font-bold text-xl cursor-pointer">
-        <div className=" font-light text-base cursor-auto text-[#6e6e73]">Explore Watch</div>
-        <div>Explore All Apple Watch</div>
-        <div>Apple Watch Series 11</div>
-        <div>Apple Watch SE 3</div>
-        <div>Apple Watch Ultra 3</div>
-        <div>Apple Watch Nike</div>
-        <div>Apple Watch Hermès</div>
+      <div className="w-320 mx-auto pb-50 pt-30">
+      <div className="text-center w-300 mx-auto">
+      <div className="text-3xl font-bold text-[#fa1858]">Safety</div>
+      <div className="text-8xl font-bold mt-5 mb-10">A real lifeline</div>
+      <div className="w-220 mx-auto text-2xl mb-10 text-gray-600">Packed with innova­tive safety firsts, Apple Watch Series 11 has your back. It’s designed to summon help when you need it most — even if you can’t reach your iPhone.</div>
+      </div>
+      <div className="mx-auto" style={{backgroundImage: `url(${watchmulti})`, width: 800, height: 800, backgroundSize: "cover"}}></div>
+      <div className="font-bold w-300 mx-auto grid grid-cols-3 grid-rows-2 gap-x-1.5 gap-y-1">
+        <div>
+        <div style={{backgroundImage: `url(${icon1})`, width: 40, height: 50, backgroundSize: "cover"}}></div>
+        <div className="mt-3 text-lg text-gray-700 w-90">Emergency SOS. ASAP. Need urgent help? Just press and hold the side button on your Apple Watch Series 11 to try to call emergency services and share your location.</div>
+        </div>
+        <div>
+        <div style={{backgroundImage: `url(${icon2})`, width: 40, height: 50, backgroundSize: "cover"}}></div>
+        <div className="mt-3 text-lg text-gray-700 w-90">Fall Detection at the ready. If Series 11 detects that you’ve taken a hard fall, it can automatically help connect you with emergency services, provide call handlers with your location and notify loved ones.</div>
+        </div>
+        <div>
+        <div style={{backgroundImage: `url(${icon3})`, width: 40, height: 50, backgroundSize: "cover"}}></div>
+        <div className="mt-3 text-lg text-gray-700 w-90">Crash Detection. Your guardian on the go. If you’ve been in a serious car crash, Series 11 can automatically help call emergency services, share your location and notify your emergency contacts.</div>
+        </div>
+        <div>
+        <div style={{backgroundImage: `url(${icon4})`, width: 40, height: 50, backgroundSize: "cover"}}></div>
+        <div className="mt-3 text-lg text-gray-700 w-90">When you’re out, Check In. Your watch can automatically notify someone when you arrive at your destination. And if you’re going for a run after dark, you can start a Check In for the duration of your workout to let a friend know when you’re done.</div>
+        </div>
+        <div>
+        <div style={{backgroundImage: `url(${icon5})`, width: 40, height: 50, backgroundSize: "cover"}}></div>
+        <div className="mt-3 text-lg text-gray-700 w-90">Let Backtrack get you back on track. Backtrack in the Compass app uses GPS data to automatically create a path of where you’ve been when you’re off the grid. Easily add waypoints for anything of interest, like the trailhead or your campsite.</div>
+        </div>
+        <div>
+        <div style={{backgroundImage: `url(${icon6})`, width: 40, height: 50, backgroundSize: "cover"}}></div>
+        <div className="mt-3 text-lg text-gray-700 w-90">Set up your Medical ID. In an emergency, first responders are able to quickly access critical medical information — like allergies or medications — directly from your Series 11.</div>
+        </div>
+      </div>
+      </div>
+      <div className="relative w-300 mx-auto pb-50 text-gray-900">
+      <div className=" text-5xl font-bold mb-10">Apple Watch</div>
+      <div className="flex w-300 gap-5">
+      <div className="mr-12 font-bold text-2xl cursor-pointer">
+        <div className=" font-light text-lg cursor-auto text-[#6e6e73] mb-2">Explore Watch</div>
+        <div className="mb-1">Explore All Apple Watch</div>
+        <div className="mb-1">Apple Watch Series 11</div>
+        <div className="mb-1">Apple Watch SE 3</div>
+        <div className="mb-1">Apple Watch Ultra 3</div>
+        <div className="mb-1">Apple Watch Nike</div>
+        <div className="mb-1">Apple Watch Hermès</div>
       </div>
       <div className="mr-7 font-bold cursor-pointer">
-        <div className=" font-light cursor-auto text-[#6e6e73]">Shop Watch</div>
-        <div>Shop Apple Watch</div>
-        <div>Apple Watch Straps</div>
-        <div>Apple Watch Accessories</div>
-        <div>Apple Trade In</div>
-        <div>Financing</div>
-        <div>Personal Setup</div>
+        <div className=" font-light cursor-auto text-[#6e6e73] mb-2">Shop Watch</div>
+        <div className="mb-1">Shop Apple Watch</div>
+        <div className="mb-1">Apple Watch Straps</div>
+        <div className="mb-1">Apple Watch Accessories</div>
+        <div className="mb-1">Apple Trade In</div>
+        <div className="mb-1">Financing</div>
+        <div className="mb-1">Personal Setup</div>
       </div>
       <div className="font-bold cursor-pointer">
-        <div className=" font-light cursor-auto text-[#6e6e73]">More from Watch</div>
-        <div>Apple Watch Support</div>
-        <div>AppleCare</div>
-        <div>watchOS 26</div>
-        <div>Apps by Apple</div>
-        <div>Apple Fitness+</div>
+        <div className=" font-light cursor-auto text-[#6e6e73] mb-2">More from Watch</div>
+        <div className="mb-1">Apple Watch Support</div>
+        <div className="mb-1">AppleCare</div>
+        <div className="mb-1">watchOS 26</div>
+        <div className="mb-1">Apps by Apple</div>
+        <div className="mb-1">Apple Fitness+</div>
       </div>
       </div>
-      <div className="cursor-pointer">
-      <div className="mt-3.5 mb-1 ">Compare Watch</div>
+      <div className="cursor-pointer font-bold">
+      <div className="mt-5 mb-3 ">Compare Watch</div>
       <div>Why Apple Watch</div>
       </div>
       </div>
@@ -287,7 +328,7 @@ export default function App() {
        </div>
        <div>
         <div className="flex items-center gap-3 text-xs pt-5 pb-5">
-        <svg  viewBox="0 0 180 180" className=" h-4 w-4">
+        <svg viewBox="0 0 180 180" className=" h-4 w-4 cursor-pointer">
          <path fill="#000" d="m108,35
              c5.587379,-6.7633 9.348007,-16.178439 8.322067,-25.546439
              c-8.053787,0.32369 -17.792625,5.36682 -23.569427,12.126399
@@ -309,107 +350,127 @@ export default function App() {
              c-10.713348,0.197403 -14.158287,-6.353043 -26.406677,-6.353043" />
         </svg>
         <div>&gt;</div>
-        <div>Watch</div>
+        <div className="cursor-pointer">Watch</div>
         <div>&gt;</div>
-        <div>Apple Watch Series 11</div>
+        <div className="cursor-pointer">Apple Watch Series 11</div>
         </div>
         <div className="flex text-sm">
           <div className="w-55">
             <div>
-            <div className="font-black">Shop and Learn</div>
-            <div className="cursor-pointer hover:underline inline-block mr-40">Store</div>
-            <div className="cursor-pointer hover:underline inline-block mr-40">Mac</div>
-            <div className="cursor-pointer hover:underline inline-block mr-40">iPad</div>
-            <div className="cursor-pointer hover:underline inline-block mr-40">iPhone</div>
-            <div className="cursor-pointer hover:underline inline-block mr-40">Watch</div>
-            <div className="cursor-pointer hover:underline inline-block mr-40">Vision</div>
-            <div className="cursor-pointer hover:underline inline-block mr-40">AirPods</div>
-            <div className="cursor-pointer hover:underline inline-block mr-40">AirTag</div>
-            <div className="cursor-pointer hover:underline inline-block mr-40">Accessories</div>
-            <div className="cursor-pointer hover:underline inline-block ">Gift Cards</div>
+            <div className="font-black mb-1">Shop and Learn</div>
+            <div className="cursor-pointer hover:underline inline-block mr-40 mb-1">Store</div>
+            <div className="cursor-pointer hover:underline inline-block mr-40 mb-1">Mac</div>
+            <div className="cursor-pointer hover:underline inline-block mr-40 mb-1">iPad</div>
+            <div className="cursor-pointer hover:underline inline-block mr-40 mb-1">iPhone</div>
+            <div className="cursor-pointer hover:underline inline-block mr-40 mb-1">Watch</div>
+            <div className="cursor-pointer hover:underline inline-block mr-40 mb-1">Vision</div>
+            <div className="cursor-pointer hover:underline inline-block mr-40 mb-1">AirPods</div>
+            <div className="cursor-pointer hover:underline inline-block mr-40 mb-1">AirTag</div>
+            <div className="cursor-pointer hover:underline inline-block mr-40 mb-1">Accessories</div>
+            <div className="cursor-pointer hover:underline inline-block mb-1">Gift Cards</div>
             </div>
             <div>
-            <div className="font-black">Apple Wallet</div>
-            <div className="cursor-pointer hover:underline inline-block mr-40">Wallet</div>
-            <div className="cursor-pointer hover:underline inline-block">Apple Pay</div>  
+            <div className="font-black mb-1 pt-3">Apple Wallet</div>
+            <div className="cursor-pointer hover:underline inline-block mr-40 mb-1">Wallet</div>
+            <div className="cursor-pointer hover:underline inline-block mb-1">Apple Pay</div>  
             </div>
           </div>
           <div className="w-55">
             <div>
-            <div className="font-black">Account</div>
-            <div className="cursor-pointer hover:underline inline-block">Manage Your Apple Account</div>
-            <div className="cursor-pointer hover:underline inline-block">Apple Store Account</div>
-            <div className="cursor-pointer hover:underline inline-block">iCloud.com</div>
+            <div className="font-black mb-1">Account</div>
+            <div className="cursor-pointer hover:underline inline-block mb-1">Manage Your Apple Account</div>
+            <div className="cursor-pointer hover:underline inline-block mb-1">Apple Store Account</div>
+            <div className="cursor-pointer hover:underline inline-block mb-1">iCloud.com</div>
             </div>
             <div>
-              <div className="font-black">Entertainment</div>
-              <div className="cursor-pointer hover:underline inline-block mr-20">Apple One</div>
-              <div className="cursor-pointer hover:underline inline-block mr-20">Apple TV</div>
-              <div className="cursor-pointer hover:underline inline-block mr-20">Apple Music</div>
-              <div className="cursor-pointer hover:underline inline-block mr-20">Apple Arcade</div>
-              <div className="cursor-pointer hover:underline inline-block mr-20">Apple Fitness+</div>
-              <div className="cursor-pointer hover:underline inline-block mr-20">Apple News+</div>
-              <div className="cursor-pointer hover:underline inline-block mr-20">Apple Podcasts</div>
-              <div className="cursor-pointer hover:underline inline-block mr-20">Apple Books</div>
-              <div className="cursor-pointer hover:underline inline-block mr-20">Apple Store</div>
+              <div className="font-black mb-1 pt-3">Entertainment</div>
+              <div className="cursor-pointer hover:underline inline-block mr-20 mb-1">Apple One</div>
+              <div className="cursor-pointer hover:underline inline-block mr-20 mb-1">Apple TV</div>
+              <div className="cursor-pointer hover:underline inline-block mr-20 mb-1">Apple Music</div>
+              <div className="cursor-pointer hover:underline inline-block mr-20 mb-1">Apple Arcade</div>
+              <div className="cursor-pointer hover:underline inline-block mr-20 mb-1">Apple Fitness+</div>
+              <div className="cursor-pointer hover:underline inline-block mr-20 mb-1">Apple News+</div>
+              <div className="cursor-pointer hover:underline inline-block mr-20 mb-1">Apple Podcasts</div>
+              <div className="cursor-pointer hover:underline inline-block mr-20 mb-1">Apple Books</div>
+              <div className="cursor-pointer hover:underline inline-block mr-20 mb-1">Apple Store</div>
             </div>
           </div>
           <div className="w-55">
-            <div className="font-black">Apple Store</div>
-            <div className="cursor-pointer hover:underline inline-block mr-20">Find a Store</div>
-            <div className="cursor-pointer hover:underline inline-block mr-20">Genius Bar</div>
-            <div className="cursor-pointer hover:underline inline-block mr-20">Today at Apple</div>
+            <div className="font-black mb-1">Apple Store</div>
+            <div className="cursor-pointer hover:underline inline-block mr-20 mb-1">Find a Store</div>
+            <div className="cursor-pointer hover:underline inline-block mr-20 mb-1">Genius Bar</div>
+            <div className="cursor-pointer hover:underline inline-block mr-20 mb-1">Today at Apple</div>
             <div className="cursor-pointer hover:underline inline-block">Group Reservations</div>
             <div className="cursor-pointer hover:underline inline-block">Apple Summer Camp</div>
-            <div className="cursor-pointer hover:underline inline-block mr-20">Apple Store App</div>
+            <div className="cursor-pointer hover:underline inline-block mr-20 mb-1">Apple Store App</div>
             <div className="cursor-pointer hover:underline inline-block">Certified Refurbished</div>
-            <div className="cursor-pointer hover:underline inline-block mr-20">Apple Trade In</div>
-            <div className="cursor-pointer hover:underline inline-block mr-20">Financing</div>
-            <div className="cursor-pointer hover:underline inline-block mr-20">Order Status</div>
-            <div className="cursor-pointer hover:underline inline-block mr-20">Shopping Help</div>
+            <div className="cursor-pointer hover:underline inline-block mr-20 mb-1">Apple Trade In</div>
+            <div className="cursor-pointer hover:underline inline-block mr-20 mb-1">Financing</div>
+            <div className="cursor-pointer hover:underline inline-block mr-20 mb-1">Order Status</div>
+            <div className="cursor-pointer hover:underline inline-block mr-20 mb-1">Shopping Help</div>
           </div>
           <div className="w-55">
             <div>
-            <div className="font-black">For Business</div>
-            <div className="cursor-pointer hover:underline inline-block">Apple and Business</div>
-            <div className="cursor-pointer hover:underline inline-block">Shop for Business</div>
+            <div className="font-black mb-1">For Business</div>
+            <div className="cursor-pointer hover:underline inline-block mb-1">Apple and Business</div>
+            <div className="cursor-pointer hover:underline inline-block mb-1">Shop for Business</div>
             </div>
             <div>
-            <div className="font-black">For Education</div>
-            <div className="cursor-pointer hover:underline inline-block">Apple and Education</div>
-            <div className="cursor-pointer hover:underline inline-block">Shop for University</div>
+            <div className="font-black mb-1 pt-3">For Education</div>
+            <div className="cursor-pointer hover:underline inline-block mb-1">Apple and Education</div>
+            <div className="cursor-pointer hover:underline inline-block mb-1">Shop for University</div>
             </div>
             <div>
-            <div className="font-black">For Healthcare</div>
-            <div  className="cursor-pointer hover:underline inline-block">Apple and Healthcare</div>
+            <div className="font-black mb-1 pt-3">For Healthcare</div>
+            <div  className="cursor-pointer hover:underline inline-block mb-1">Apple and Healthcare</div>
             </div>
             <div>
-            <div className="font-black">For Goverment</div>
-            <div  className="cursor-pointer hover:underline inline-block">Apple and Goverment</div>
+            <div className="font-black mb-1 pt-3">For Goverment</div>
+            <div  className="cursor-pointer hover:underline inline-block mb-1">Apple and Goverment</div>
             </div>
           </div>
           <div className="w-55">
             <div>
-            <div className="font-black">Apple Values</div>
-            <div>Accessibility</div>
-            <div>Education</div>
-            <div>Environment</div>
-            <div>Privacy</div>
-            <div>Supply Chain Innovation</div>  
+            <div className="font-black mb-1">Apple Values</div>
+            <div  className="cursor-pointer hover:underline inline-block mr-20 mb-1">Accessibility</div>
+            <div  className="cursor-pointer hover:underline inline-block mr-20 mb-1">Education</div>
+            <div  className="cursor-pointer hover:underline inline-block mr-20 mb-1">Environment</div>
+            <div  className="cursor-pointer hover:underline inline-block mr-20 mb-1">Privacy</div>
+            <div  className="cursor-pointer hover:underline inline-block mb-1">Supply Chain Innovation</div>  
             </div>
             <div>
-            <div className="font-black">About People</div>
-            <div>Newsroom</div>
-            <div>Apple Leadership</div>
-            <div>Career Opportunities</div>
-            <div>Warranty</div>
-            <div>Investors</div> 
-            <div>Ethics & Compliance</div>  
-            <div>Events</div>  
-            <div>European Job Creation</div>  
-            <div>Contact Apple</div>   
+            <div className="font-black mb-1 pt-3">About People</div>
+            <div className="cursor-pointer hover:underline inline-block mr-20 mb-1">Newsroom</div>
+            <div className="cursor-pointer hover:underline inline-block mr-20 mb-1">Apple Leadership</div>
+            <div className="cursor-pointer hover:underline inline-block mb-1">Career Opportunities</div>
+            <div className="cursor-pointer hover:underline inline-block mr-20 mb-1">Warranty</div>
+            <div className="cursor-pointer hover:underline inline-block mr-20 mb-1">Investors</div> 
+            <div className="cursor-pointer hover:underline inline-block mb-1">Ethics & Compliance</div>  
+            <div className="cursor-pointer hover:underline inline-block mr-20 mb-1">Events</div>  
+            <div className="cursor-pointer hover:underline inline-block mb-1">European Job Creation</div>  
+            <div className="cursor-pointer hover:underline inline-block mr-20 mb-1">Contact Apple</div>   
             </div>
           </div>
+        </div>
+        <div className="text-xs pb-5 pt-7">
+         <div className="text-gray-500 border-b border-gray-400 pb-5">More ways to shop: <div className="inline-block text-blue-500 underline cursor-pointer">find an Apple Store</div> or <div className="inline-block text-blue-500 underline cursor-pointer">other retailer</div> near you. Or call <div className="inline-block text-blue-500 underline cursor-pointer">0800 048 0408.</div></div>
+         <div className="flex gap-10 pt-5">
+          <div className="text-gray-500">Copyright © 2025 Apple Inc. All rights reserved.</div>
+          <div className="flex gap-2">
+          <div className="hover:underline hover:cursor-pointer">Privacy Policy</div>
+          <div>|</div>
+          <div className="hover:underline hover:cursor-pointer">Use of Cookies</div>
+          <div>|</div>
+          <div className="hover:underline hover:cursor-pointer">Terms of Use</div>
+          <div>|</div>
+          <div className="hover:underline hover:cursor-pointer">Sales and Refunds</div>
+          <div>|</div>
+          <div className="hover:underline hover:cursor-pointer">Legal</div>
+          <div>|</div>
+          <div className="hover:underline hover:cursor-pointer">Site Map</div>
+          </div>
+          <div className="pl-15">United Kingdom</div>
+         </div>
         </div>
       </div>
       </div>
