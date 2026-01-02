@@ -188,30 +188,30 @@ export default function App() {
       </div>
       </div>
       </div>
-      <div className="p-5">
+      <div className="p-5 mb-15 md:mb-0">
       <div className="mx-auto max-w-120 mt-20 md:max-w-250 md:text-center">
       <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#fa1858]">Fitness</div>
       <div ref={trigger2} className="max-w-100 text-5xl mt-1 mb-5 md:mx-auto md:mt-5 md:mb-10 md:max-w-120 md:text-6xl lg:max-w-200 lg:text-8xl font-bold">Better by every measure.</div>
       <div className="font-bold mx-auto max-w-150 md:max-w-129 md:text-base lg:max-w-160 lg:text-2xl mb-20 text-gray-600">Whether you’re training for a marathon or swimming lengths, Apple Watch Series 11 serves up endless ways to work out. And it uses helpful metrics to count every move, so you know how to push harder and train smarter. Let’s go — the starting line is on your wrist.</div>
       </div>
-      <div className="mx-auto md:grid md:grid-cols-2 md:grid-rows-2 md:gap-x-40 lg:gap-x-60 lg:gap-y-1">
-       <div className="w-[500px] h-[500px] md:translate-x-[calc(50vw-500px)] lg:translate-x-[calc(40vw-600px)] md:w-[600px] md:h-[600px] lg:w-[950px] lg:h-[950px]" style={{backgroundImage: `url(${watch1})`, backgroundSize: "contain", backgroundRepeat: "no-repeat" }}></div>
-       <div className="flex flex-col z-1 mt-5 max-w-90">
+      <div className="flex flex-col items-center mx-auto max-w-150 md:items-start md:max-w-250 lg:max-w-500 md:grid md:grid-cols-2 md:grid-rows-2 md:gap-x-40 lg:gap-x-60 lg:gap-y-1">
+       <div className="order-2 mt-10 w-[500px] h-[500px] mr-20 md:mt-0 md:order-none md:translate-x-[calc(50vw-500px)] lg:translate-x-[calc(40vw-600px)] md:w-[600px] md:h-[600px] lg:w-[950px] lg:h-[950px]" style={{backgroundImage: `url(${watch1})`, backgroundSize: "contain", backgroundRepeat: "no-repeat" }}></div>
+       <div className="order-1 md:order-none flex flex-col z-1 md:mt-5 max-w-120 md:max-w-90">
        <div style={{backgroundImage: `url(${run})`, width: 70, height: 70, backgroundSize: "contain", backgroundRepeat: "no-repeat" }}></div>
-       <div className="text-base pt-2">A refreshed Workout app. An improved layout highlights four new corner buttons, making it even quicker to access your go‑to features like Pacer, Race Route and Custom Workout.</div>
+       <div className="md:text-base pt-2">A refreshed Workout app. An improved layout highlights four new corner buttons, making it even quicker to access your go‑to features like Pacer, Race Route and Custom Workout.</div>
        </div>
-       <div className="flex flex-col max-w-90 z-1 md:translate-x-[calc(10vw-50px)] md:translate-y-40 lg:translate-x-[calc(45vw-450px)] lg:translate-y-90">
+       <div className="order-4 mt-10 flex flex-col max-w-110 md:mt-0 md:order-none md:max-w-90 z-1 md:translate-x-[calc(10vw-50px)] md:translate-y-40 lg:translate-x-[calc(45vw-450px)] lg:translate-y-90">
        <div style={{backgroundImage: `url(${clock})`, width: 70, height: 70, backgroundSize: "contain", backgroundRepeat: "no-repeat" }}></div>
        <div className="text-base pt-2">Run circles around your Activity rings. Move. Exercise. Stand. The Activity app can track your daily activity. You can easily pause your rings or adjust your goals for each day of the week.</div>
        </div>
-       <div className="w-[500px] h-[500px] relative md:-translate-x-30 md:-translate-y-60 lg:-translate-x-50 lg:-translate-y-90 md:w-[600px] md:h-[600px] lg:w-[950px] lg:h-[950px]" style={{backgroundImage: `url(${watch2})`, backgroundSize: "contain", backgroundRepeat: "no-repeat" }}></div>
+       <div className="order-3 mt-10 ml-20 md:mt-0 md:ml-0 md:order-none w-[500px] h-[500px] relative md:-translate-x-30 md:-translate-y-60 lg:-translate-x-50 lg:-translate-y-90 md:w-[600px] md:h-[600px] lg:w-[950px] lg:h-[950px]" style={{backgroundImage: `url(${watch2})`, backgroundSize: "contain", backgroundRepeat: "no-repeat" }}></div>
       </div>
       </div>
       <div className="text-white relative w-full h-[1900px]">
-       <div className="absolute inset-0" style={{backgroundImage: `url(${girlrunning})`, backgroundSize: "cover", backgroundRepeat: "no-repeat"}}>
-       <div className="mx-auto w-300 pt-35">
-       <div className="text-5xl font-bold w-130 mb-6">To know you is to move you.</div> 
-       <div className="text-2xl w-155">Now, in addition to detailed insights, Apple Watch Series 11 provides personalised fitness encouragement. With Apple Intelligence from your nearby iPhone, Workout Buddy gives you audible motivation in real time. Together with Workout media, Heart Rate Zones and Custom Workouts, there are even more brains behind the burn.</div>
+       <div className="absolute inset-0 pl-10 pr-10" style={{backgroundImage: `url(${girlrunning})`, backgroundSize: "cover", backgroundRepeat: "no-repeat"}}>
+       <div className="mx-auto max-w-110 md:mx-0 md:max-w-100 pt-35 lg:max-w-300">
+       <div className="font-bold text-3xl md:text-4xl lg:text-5xl lg:max-w-80 mb-6">To know you <br className="hidden lg:block"/> is to <br className="hidden md:block"/> move you.</div> 
+       <div className="text-xl md:max-w-120 md:text-xl lg:text-2xl lg:max-w-110">Now, in addition to detailed insights, Apple Watch Series 11 provides personalised fitness encouragement. With Apple Intelligence from your nearby iPhone, Workout Buddy gives you audible motivation in real time. Together with Workout media, Heart Rate Zones and Custom Workouts, there are even more brains behind the burn.</div>
        </div>
        <div className="mx-auto w-200 pt-35">
         <div className="ml-100">
@@ -223,77 +223,79 @@ export default function App() {
        </div>
        </div>
       </div>
-      <div className="w-320 mx-auto pb-50 pt-30">
-      <div className="text-center w-300 mx-auto">
-      <div className="text-3xl font-bold text-[#fa1858]">Safety</div>
-      <div className="text-8xl font-bold mt-5 mb-10">A real lifeline</div>
-      <div className="w-220 mx-auto text-2xl mb-10 text-gray-600">Packed with innova­tive safety firsts, Apple Watch Series 11 has your back. It’s designed to summon help when you need it most — even if you can’t reach your iPhone.</div>
+      <div className="max-w-120 md:max-w-300 mx-auto pb-50 pt-30 pr-5 pl-5 lg:max-w-250">
+      <div className="md:text-center mx-auto">
+      <div className="font-bold text-[#fa1858] text-2xl md:text-3xl">Safety</div>
+      <div className="text-5xl mt-3 mb-5 md:text-6xl md:mt-5 md:mb-10 lg:text-8xl font-bold">A real lifeline</div>
+      <div className="font-bold text-lg md:text-xl md:max-w-160 lg:text-2xl lg:max-w-220 mx-auto mb-10 text-gray-600">Packed with innova­tive safety firsts, Apple Watch Series 11 has your back. It’s designed to summon help when you need it most — even if you can’t reach your iPhone.</div>
       </div>
-      <div className="mx-auto" style={{backgroundImage: `url(${watchmulti})`, width: 800, height: 800, backgroundSize: "cover"}}></div>
-      <div className="font-bold w-300 mx-auto grid grid-cols-3 grid-rows-2 gap-x-1.5 gap-y-1">
-        <div>
+      <div className="mx-auto mb-10 md:mb-0 w-[350px] h-[350px] md:w-[700px] md:h-[700px] lg:w-[800px] lg:h-[800px]" style={{backgroundImage: `url(${watchmulti})`, backgroundSize: "cover"}}></div>
+      <div className="font-bold md:max-w-220 mx-auto md:grid md:grid-cols-3 md:grid-rows-2 md:gap-x-10 md:gap-y-3 lg:max-w-250 lg:gap-x-1.5 lg:gap-y-1">
+        <div className="mb-10 md:mb-0">
         <div style={{backgroundImage: `url(${icon1})`, width: 40, height: 50, backgroundSize: "cover"}}></div>
-        <div className="mt-3 text-lg text-gray-700 w-90">Emergency SOS. ASAP. Need urgent help? Just press and hold the side button on your Apple Watch Series 11 to try to call emergency services and share your location.</div>
+        <div className="mt-3 text-gray-700 md:text-base md:max-w-65 lg:text-lg md: lg:max-w-70">Emergency SOS. ASAP. Need urgent help? Just press and hold the side button on your Apple Watch Series 11 to try to call emergency services and share your location.</div>
         </div>
-        <div>
+        <div className="mb-10 md:mb-0">
         <div style={{backgroundImage: `url(${icon2})`, width: 40, height: 50, backgroundSize: "cover"}}></div>
-        <div className="mt-3 text-lg text-gray-700 w-90">Fall Detection at the ready. If Series 11 detects that you’ve taken a hard fall, it can automatically help connect you with emergency services, provide call handlers with your location and notify loved ones.</div>
+        <div className="mt-3 text-gray-700 md:text-base md:max-w-65 lg:text-lg md: lg:max-w-70">Fall Detection at the ready. If Series 11 detects that you’ve taken a hard fall, it can automatically help connect you with emergency services, provide call handlers with your location and notify loved ones.</div>
         </div>
-        <div>
+        <div className="mb-10 md:mb-0">
         <div style={{backgroundImage: `url(${icon3})`, width: 40, height: 50, backgroundSize: "cover"}}></div>
-        <div className="mt-3 text-lg text-gray-700 w-90">Crash Detection. Your guardian on the go. If you’ve been in a serious car crash, Series 11 can automatically help call emergency services, share your location and notify your emergency contacts.</div>
+        <div className="mt-3 text-gray-700 md:text-base md:max-w-65 lg:text-lg md: lg:max-w-70">Crash Detection. Your guardian on the go. If you’ve been in a serious car crash, Series 11 can automatically help call emergency services, share your location and notify your emergency contacts.</div>
         </div>
-        <div>
+        <div className="mb-10 md:mb-0">
         <div style={{backgroundImage: `url(${icon4})`, width: 40, height: 50, backgroundSize: "cover"}}></div>
-        <div className="mt-3 text-lg text-gray-700 w-90">When you’re out, Check In. Your watch can automatically notify someone when you arrive at your destination. And if you’re going for a run after dark, you can start a Check In for the duration of your workout to let a friend know when you’re done.</div>
+        <div className="mt-3 text-gray-700 md:text-base md:max-w-65 lg:text-lg md: lg:max-w-70">When you’re out, Check In. Your watch can automatically notify someone when you arrive at your destination. And if you’re going for a run after dark, you can start a Check In for the duration of your workout to let a friend know when you’re done.</div>
         </div>
-        <div>
-        <div style={{backgroundImage: `url(${icon5})`, width: 40, height: 50, backgroundSize: "cover"}}></div>
-        <div className="mt-3 text-lg text-gray-700 w-90">Let Backtrack get you back on track. Backtrack in the Compass app uses GPS data to automatically create a path of where you’ve been when you’re off the grid. Easily add waypoints for anything of interest, like the trailhead or your campsite.</div>
+        <div className="mb-10 md:mb-0">
+        <div style={{backgroundImage: `url(${icon5})`, width: 40, height: 55, backgroundSize: "cover"}}></div>
+        <div className="mt-3 text-gray-700 md:text-base md:max-w-65 lg:text-lg md: lg:max-w-70">Let Backtrack get you back on track. Backtrack in the Compass app uses GPS data to automatically create a path of where you’ve been when you’re off the grid. Easily add waypoints for anything of interest, like the trailhead or your campsite.</div>
         </div>
-        <div>
+        <div className="mb-10 md:mb-0">
         <div style={{backgroundImage: `url(${icon6})`, width: 40, height: 50, backgroundSize: "cover"}}></div>
-        <div className="mt-3 text-lg text-gray-700 w-90">Set up your Medical ID. In an emergency, first responders are able to quickly access critical medical information — like allergies or medications — directly from your Series 11.</div>
+        <div className="mt-3 text-gray-700 md:text-base md:max-w-65 lg:text-lg md: lg:max-w-70">Set up your Medical ID. In an emergency, first responders are able to quickly access critical medical information — like allergies or medications — directly from your Series 11.</div>
         </div>
       </div>
       </div>
-      <div className="relative w-300 mx-auto pb-50 text-gray-900">
-      <div className=" text-5xl font-bold mb-10">Apple Watch</div>
-      <div className="flex w-300 gap-5">
-      <div className="mr-12 font-bold text-2xl cursor-pointer">
+      <div className="relative max-w-150 md:max-w-300 mx-auto pl-10 pr-10 md:pl-15 md:pr-15 pb-50 text-gray-900">
+      <div className="text-3xl font-bold mb-10 md:text-5xl ">Apple Watch</div>
+      <div className="lg:flex w-300 gap-5">
+      <div className="mr-12 font-bold text-xl md:text-2xl cursor-pointer">
         <div className=" font-light text-lg cursor-auto text-[#6e6e73] mb-2">Explore Watch</div>
-        <div className="mb-1">Explore All Apple Watch</div>
-        <div className="mb-1">Apple Watch Series 11</div>
-        <div className="mb-1">Apple Watch SE 3</div>
-        <div className="mb-1">Apple Watch Ultra 3</div>
-        <div className="mb-1">Apple Watch Nike</div>
-        <div className="mb-1">Apple Watch Hermès</div>
+        <div className="mb-2">Explore All Apple Watch</div>
+        <div className="mb-2">Apple Watch Series 11</div>
+        <div className="mb-2">Apple Watch SE 3</div>
+        <div className="mb-2">Apple Watch Ultra 3</div>
+        <div className="mb-2">Apple Watch Nike</div>
+        <div className="mb-2">Apple Watch Hermès</div>
+        <div className="text-base cursor-pointer font-bold">
+         <div className="mt-5 mb-2 lg:mt-7 lg:mb-3 ">Compare Watch</div>
+         <div>Why Apple Watch</div>
+        </div>
       </div>
+      <div className="md:flex lg:flex-row mt-10 lg:mt-0 lg:gap-5">
       <div className="mr-7 font-bold cursor-pointer">
         <div className=" font-light cursor-auto text-[#6e6e73] mb-2">Shop Watch</div>
-        <div className="mb-1">Shop Apple Watch</div>
-        <div className="mb-1">Apple Watch Straps</div>
-        <div className="mb-1">Apple Watch Accessories</div>
-        <div className="mb-1">Apple Trade In</div>
-        <div className="mb-1">Financing</div>
-        <div className="mb-1">Personal Setup</div>
+        <div className="mb-2">Shop Apple Watch</div>
+        <div className="mb-2">Apple Watch Straps</div>
+        <div className="mb-2">Apple Watch Accessories</div>
+        <div className="mb-2">Apple Trade In</div>
+        <div className="mb-2">Financing</div>
+        <div className="mb-2">Personal Setup</div>
       </div>
-      <div className="font-bold cursor-pointer">
-        <div className=" font-light cursor-auto text-[#6e6e73] mb-2">More from Watch</div>
-        <div className="mb-1">Apple Watch Support</div>
-        <div className="mb-1">AppleCare</div>
-        <div className="mb-1">watchOS 26</div>
-        <div className="mb-1">Apps by Apple</div>
-        <div className="mb-1">Apple Fitness+</div>
-      </div>
-      </div>
-      <div className="cursor-pointer font-bold">
-      <div className="mt-5 mb-3 ">Compare Watch</div>
-      <div>Why Apple Watch</div>
+      <div className="mt-10 md:mt-0 font-bold cursor-pointer">
+        <div className="font-light cursor-auto text-[#6e6e73] mb-2">More from Watch</div>
+        <div className="mb-2">Apple Watch Support</div>
+        <div className="mb-2">AppleCare</div>
+        <div className="mb-2">watchOS 26</div>
+        <div className="mb-2">Apps by Apple</div>
+        <div className="mb-2">Apple Fitness+</div>
       </div>
       </div>
-      <div className="text-gray-600 bg-gray-100">
-      <div className="mx-auto w-250 bg-gray-100">
+      </div>
+      </div>
+      <div className="pl-5 pr-5 text-gray-600 bg-gray-100">
+      <div className="mx-auto max-w-250 bg-gray-100">
        <ol className="list-decimal list-inside text-xs pt-5">
         <li className="pb-2">Hypertension notifications are not intended for use by people under 22 years old, those who have been previously diagnosed with hypertension, or pregnant persons.</li>
         <li className="pb-2">All-day battery life including sleep tracking is based on the following use: 300 time checks, 90 notifications, 15 minutes of app use, a 60‑minute workout with music playback from Apple Watch via Bluetooth and 6 hours of sleep tracking, over the course of 24 hours; Apple Watch Series 11 (GPS) usage includes connection to iPhone via Bluetooth during the entire 24‑hour test; Apple Watch Series 11 (GPS + Cellular) usage includes a total of 4 hours of cellular connection and 20 hours of connection to iPhone via Bluetooth over the course of 24 hours. Battery life in Low Power Mode including sleep tracking is based on the following use: 530 time checks, 160 notifications, 26 minutes of app use, a 60‑minute workout with music playback from Apple Watch via Bluetooth and 6 hours of sleep tracking, over the course of 38 hours; Apple Watch Series 11 (GPS) usage includes connection to iPhone via Bluetooth during the entire 38‑hour test; Apple Watch Series 11 (GPS + Cellular) usage includes on‑demand cellular connection and 30 hours of connection to iPhone via Bluetooth over the course of 38 hours. Testing conducted by Apple in July and August 2025 using pre‑production Apple Watch Series 11 (GPS) and Apple Watch Series 11 (GPS + Cellular), each paired with an iPhone; all devices tested with pre‑release software. Battery life varies by use, configuration, mobile network, signal strength and many other factors; actual results will vary.</li>
@@ -356,8 +358,8 @@ export default function App() {
         <div>&gt;</div>
         <div className="cursor-pointer">Apple Watch Series 11</div>
         </div>
-        <div className="flex text-sm">
-          <div className="w-55">
+        <div className="flex text-xs gap-5">
+          <div className="max-w-35 lg:max-w-50">
             <div>
             <div className="font-black mb-1">Shop and Learn</div>
             <div className="cursor-pointer hover:underline inline-block mr-40 mb-1">Store</div>
@@ -377,7 +379,7 @@ export default function App() {
             <div className="cursor-pointer hover:underline inline-block mb-1">Apple Pay</div>  
             </div>
           </div>
-          <div className="w-55">
+          <div className="max-w-35 lg:max-w-50">
             <div>
             <div className="font-black mb-1">Account</div>
             <div className="cursor-pointer hover:underline inline-block mb-1">Manage Your Apple Account</div>
@@ -386,32 +388,32 @@ export default function App() {
             </div>
             <div>
               <div className="font-black mb-1 pt-3">Entertainment</div>
-              <div className="cursor-pointer hover:underline inline-block mr-20 mb-1">Apple One</div>
-              <div className="cursor-pointer hover:underline inline-block mr-20 mb-1">Apple TV</div>
-              <div className="cursor-pointer hover:underline inline-block mr-20 mb-1">Apple Music</div>
-              <div className="cursor-pointer hover:underline inline-block mr-20 mb-1">Apple Arcade</div>
-              <div className="cursor-pointer hover:underline inline-block mr-20 mb-1">Apple Fitness+</div>
-              <div className="cursor-pointer hover:underline inline-block mr-20 mb-1">Apple News+</div>
-              <div className="cursor-pointer hover:underline inline-block mr-20 mb-1">Apple Podcasts</div>
-              <div className="cursor-pointer hover:underline inline-block mr-20 mb-1">Apple Books</div>
-              <div className="cursor-pointer hover:underline inline-block mr-20 mb-1">Apple Store</div>
+              <div className="w-30 cursor-pointer hover:underline inline-block mr-20 mb-1">Apple One</div>
+              <div className="w-30 cursor-pointer hover:underline inline-block mr-20 mb-1">Apple TV</div>
+              <div className="w-30 cursor-pointer hover:underline inline-block mr-20 mb-1">Apple Music</div>
+              <div className="w-30 cursor-pointer hover:underline inline-block mr-20 mb-1">Apple Arcade</div>
+              <div className="w-30 cursor-pointer hover:underline inline-block mr-20 mb-1">Apple Fitness+</div>
+              <div className="w-30 cursor-pointer hover:underline inline-block mr-20 mb-1">Apple News+</div>
+              <div className="w-30 cursor-pointer hover:underline inline-block mr-20 mb-1">Apple Podcasts</div>
+              <div className="w-30 cursor-pointer hover:underline inline-block mr-20 mb-1">Apple Books</div>
+              <div className="w-30 cursor-pointer hover:underline inline-block mr-20 mb-1">Apple Store</div>
             </div>
           </div>
-          <div className="w-55">
+          <div className="max-w-35 lg:max-w-50">
             <div className="font-black mb-1">Apple Store</div>
-            <div className="cursor-pointer hover:underline inline-block mr-20 mb-1">Find a Store</div>
-            <div className="cursor-pointer hover:underline inline-block mr-20 mb-1">Genius Bar</div>
-            <div className="cursor-pointer hover:underline inline-block mr-20 mb-1">Today at Apple</div>
-            <div className="cursor-pointer hover:underline inline-block">Group Reservations</div>
-            <div className="cursor-pointer hover:underline inline-block">Apple Summer Camp</div>
-            <div className="cursor-pointer hover:underline inline-block mr-20 mb-1">Apple Store App</div>
-            <div className="cursor-pointer hover:underline inline-block">Certified Refurbished</div>
-            <div className="cursor-pointer hover:underline inline-block mr-20 mb-1">Apple Trade In</div>
-            <div className="cursor-pointer hover:underline inline-block mr-20 mb-1">Financing</div>
-            <div className="cursor-pointer hover:underline inline-block mr-20 mb-1">Order Status</div>
-            <div className="cursor-pointer hover:underline inline-block mr-20 mb-1">Shopping Help</div>
+            <div className="w-32 cursor-pointer hover:underline inline-block mr-20 mb-1">Find a Store</div>
+            <div className="w-32 cursor-pointer hover:underline inline-block mr-20 mb-1">Genius Bar</div>
+            <div className="w-32 cursor-pointer hover:underline inline-block mr-20 mb-1">Today at Apple</div>
+            <div className="w-32 cursor-pointer hover:underline inline-block">Group Reservations</div>
+            <div className="w-32 cursor-pointer hover:underline inline-block">Apple Summer Camp</div>
+            <div className="w-32 cursor-pointer hover:underline inline-block mr-20 mb-1">Apple Store App</div>
+            <div className="w-32 cursor-pointer hover:underline inline-block">Certified Refurbished</div>
+            <div className="w-32 cursor-pointer hover:underline inline-block mr-20 mb-1">Apple Trade In</div>
+            <div className="w-32 cursor-pointer hover:underline inline-block mr-20 mb-1">Financing</div>
+            <div className="w-32 cursor-pointer hover:underline inline-block mr-20 mb-1">Order Status</div>
+            <div className="w-32 cursor-pointer hover:underline inline-block mr-20 mb-1">Shopping Help</div>
           </div>
-          <div className="w-55">
+          <div className="max-w-35 lg:max-w-60">
             <div>
             <div className="font-black mb-1">For Business</div>
             <div className="cursor-pointer hover:underline inline-block mb-1">Apple and Business</div>
@@ -431,7 +433,7 @@ export default function App() {
             <div  className="cursor-pointer hover:underline inline-block mb-1">Apple and Goverment</div>
             </div>
           </div>
-          <div className="w-55">
+          <div className="max-w-35 lg:max-w-50">
             <div>
             <div className="font-black mb-1">Apple Values</div>
             <div  className="cursor-pointer hover:underline inline-block mr-20 mb-1">Accessibility</div>
@@ -440,7 +442,7 @@ export default function App() {
             <div  className="cursor-pointer hover:underline inline-block mr-20 mb-1">Privacy</div>
             <div  className="cursor-pointer hover:underline inline-block mb-1">Supply Chain Innovation</div>  
             </div>
-            <div>
+            <div className="max-w-35 lg:max-w-50">
             <div className="font-black mb-1 pt-3">About People</div>
             <div className="cursor-pointer hover:underline inline-block mr-20 mb-1">Newsroom</div>
             <div className="cursor-pointer hover:underline inline-block mr-20 mb-1">Apple Leadership</div>
@@ -456,9 +458,9 @@ export default function App() {
         </div>
         <div className="text-xs pb-5 pt-7">
          <div className="text-gray-500 border-b border-gray-400 pb-5">More ways to shop: <div className="inline-block text-blue-500 underline cursor-pointer">find an Apple Store</div> or <div className="inline-block text-blue-500 underline cursor-pointer">other retailer</div> near you. Or call <div className="inline-block text-blue-500 underline cursor-pointer">0800 048 0408.</div></div>
-         <div className="flex gap-10 pt-5">
+         <div className="lg:flex gap-10 pt-5">
           <div className="text-gray-500">Copyright © 2025 Apple Inc. All rights reserved.</div>
-          <div className="flex gap-2">
+          <div className="flex gap-2 mt-1 lg:mt-0">
           <div className="hover:underline hover:cursor-pointer">Privacy Policy</div>
           <div>|</div>
           <div className="hover:underline hover:cursor-pointer">Use of Cookies</div>
@@ -471,8 +473,9 @@ export default function App() {
           <div>|</div>
           <div className="hover:underline hover:cursor-pointer">Site Map</div>
           </div>
-          <div className="pl-15">United Kingdom</div>
+          
          </div>
+         <div className="pl-15 text-right">United Kingdom</div>
         </div>
       </div>
       </div>
