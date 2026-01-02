@@ -82,13 +82,13 @@ export default function App() {
 
   return (
     <div className="overflow-x-hidden overflow-y-hidden font-lexend">
-      <div className="flex w-full p-3 border-b border-gray-300 bg-gray-50 z-2 fixed">
-      <div className="mx-auto gap-100 flex justify-between  items-center">
-      <div className="font-bold text-xl cursor-pointer">Apple Watch Series 11</div>
+      <div className="flex w-full border-b border-gray-300 bg-gray-50 z-2 fixed p-2 md:p-3">
+      <div className="p-2 gap-[50vw] md:mx-auto md:gap-40 lg:gap-100 items-center flex">
+      <div className="font-bold w-50 text-base md:text-xl cursor-pointer">Apple Watch Series 11</div>
       <div className="flex cursor-pointer gap-6 text-xs items-center">
-      <div>Overview</div>
-      <div>Why Apple Watch</div>
-      <div>Tech Specs</div>
+      <div className="hidden md:block">Overview</div>
+      <div className="hidden md:block">Why Apple Watch</div>
+      <div className="hidden md:block">Tech Specs</div>
       <div className="bg-blue-500 px-3 py-1 text-white font-bold" style={{borderRadius: 15}}>Buy</div>
       </div>
       </div>
@@ -108,24 +108,24 @@ export default function App() {
       </div>
       <button className="w-20 h-20 bg-amber-700" onClick={prevSlide}>prev</button>
       <button className="w-20 h-20 bg-amber-700" onClick={nextSlide}>next</button>
-      <div className="relative w-full h-[2000px]">
+      <div className="relative w-full h-[2550px]">
       <div ref={bg} className="absolute inset-0 transition-all duration-2000" style={{backgroundImage: `url(${women})`, 
       backgroundSize: "cover", backgroundPosition: "center"}}>
       </div>
-      <div className="relative">
-      <div className=" mx-auto pt-30 max-w-250">
-      <div className="text-white font-bold ml-100">
-      <div className="text-[#50c1fc] text-3xl">Health</div> 
-      <div className="text-8xl mt-4">Know <br />your body<br /> by heart.</div>
-      <div className="mt-10 text-xl">The more insights you have, the more empowered you are to take action. From the ECG app to the Vitals app and more, Apple Watch Series 11 provides a bigger picture of your health, so you can stay informed. And now Series 11 takes the next big step in heart health with a pioneering feature — hypertension notifications.1</div>
+      <div className="relative px-5 mx-auto pt-30">
+      <div className="md: lg:">
+      <div className="text-white font-bold md:ml-20 lg:ml-50">
+      <div className="text-[#50c1fc] text-xl md:text-2xl md:mb-5 lg:text-3xl">Health</div> 
+      <div className="text-5xl md:text-6xl md:w-120 lg:text-8xl">Know <br className="hidden md:hidden" />your body<br /> by heart.</div>
+      <div className="mt-5 text-base max-w-100 md:text-base md:w-130 md:mt-10 lg:text-2xl lg:w-100 ">The more insights you have, the more empowered you are to take action. From the ECG app to the Vitals app and more, Apple Watch Series 11 provides a bigger picture of your health, so you can stay informed. And now Series 11 takes the next big step in heart health with a pioneering feature — hypertension notifications.1</div>
       </div>
       </div>
-      <div className="w-300 mx-auto pt-70">
+      <div className="max-w-300 mx-auto pt-70">
       <div className="text-white font-bold">
-        <div ref={trigger1} className=" text-6xl w-180">Get notified of chronic high blood pressure.</div>
-        <div className="mt-6 text-2xl w-230">Hypertension, or high blood pressure, impacts over 1.3 billion adults worldwide and is a leading cause of heart attack, stroke and kidney disease. The condition frequently goes undiagnosed because it often has no symptoms — and even during a doctor’s visit, with a single measurement it can be easily missed.</div>
+        <div ref={trigger1} className=" text-6xl max-w-180">Get notified of chronic high blood pressure.</div>
+        <div className="mt-6 text-2xl max-w-230">Hypertension, or high blood pressure, impacts over 1.3 billion adults worldwide and is a leading cause of heart attack, stroke and kidney disease. The condition frequently goes undiagnosed because it often has no symptoms — and even during a doctor’s visit, with a single measurement it can be easily missed.</div>
       </div>
-      <div className="flex gap-15 text-white text-base mt-20 w-300">
+      <div className="flex gap-15 text-white text-base mt-20 max-w-300">
         <div className="max-w-100">
         <div className="mb-4" 
         style={{backgroundImage: `url(${ring})`, width: 35, height:45, backgroundRepeat: "no-repeat", backgroundSize: "cover"}}></div>
@@ -188,22 +188,24 @@ export default function App() {
       </div>
       </div>
       </div>
-      <div className="mx-auto w-200 mt-30" style={{textAlign: "center"}}>
-      <div className="text-3xl font-bold text-[#fa1858]">Fitness</div>
-      <div ref={trigger2} className="text-8xl font-bold mt-5 mb-10">Better by every measure.</div>
-      <div className="text-2xl mb-10 text-gray-600">Whether you’re training for a marathon or swimming lengths, Apple Watch Series 11 serves up endless ways to work out. And it uses helpful metrics to count every move, so you know how to push harder and train smarter. Let’s go — the starting line is on your wrist.</div>
+      <div className="p-5">
+      <div className="mx-auto max-w-120 mt-20 md:max-w-250 md:text-center">
+      <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#fa1858]">Fitness</div>
+      <div ref={trigger2} className="max-w-100 text-5xl mt-1 mb-5 md:mx-auto md:mt-5 md:mb-10 md:max-w-120 md:text-6xl lg:max-w-200 lg:text-8xl font-bold">Better by every measure.</div>
+      <div className="font-bold mx-auto max-w-150 md:max-w-129 md:text-base lg:max-w-160 lg:text-2xl mb-20 text-gray-600">Whether you’re training for a marathon or swimming lengths, Apple Watch Series 11 serves up endless ways to work out. And it uses helpful metrics to count every move, so you know how to push harder and train smarter. Let’s go — the starting line is on your wrist.</div>
       </div>
-      <div className="mx-auto grid grid-cols-2 grid-rows-2 gap-x-60 gap-y-1">
-       <div className="translate-x-[calc(40vw-600px)]" style={{backgroundImage: `url(${watch1})`, width: 950, height: 950, backgroundSize: "contain", backgroundRepeat: "no-repeat" }}></div>
-       <div className="flex flex-col z-1 mt-5">
+      <div className="mx-auto md:grid md:grid-cols-2 md:grid-rows-2 md:gap-x-40 lg:gap-x-60 lg:gap-y-1">
+       <div className="w-[500px] h-[500px] md:translate-x-[calc(50vw-500px)] lg:translate-x-[calc(40vw-600px)] md:w-[600px] md:h-[600px] lg:w-[950px] lg:h-[950px]" style={{backgroundImage: `url(${watch1})`, backgroundSize: "contain", backgroundRepeat: "no-repeat" }}></div>
+       <div className="flex flex-col z-1 mt-5 max-w-90">
        <div style={{backgroundImage: `url(${run})`, width: 70, height: 70, backgroundSize: "contain", backgroundRepeat: "no-repeat" }}></div>
-       <div className="text-base w-100 pt-2">A refreshed Workout app. An improved layout highlights four new corner buttons, making it even quicker to access your go‑to features like Pacer, Race Route and Custom Workout.</div>
+       <div className="text-base pt-2">A refreshed Workout app. An improved layout highlights four new corner buttons, making it even quicker to access your go‑to features like Pacer, Race Route and Custom Workout.</div>
        </div>
-       <div className="flex flex-col z-1 translate-x-[calc(45vw-450px)] translate-y-90">
+       <div className="flex flex-col max-w-90 z-1 md:translate-x-[calc(10vw-50px)] md:translate-y-40 lg:translate-x-[calc(45vw-450px)] lg:translate-y-90">
        <div style={{backgroundImage: `url(${clock})`, width: 70, height: 70, backgroundSize: "contain", backgroundRepeat: "no-repeat" }}></div>
-       <div className="text-base w-100 pt-2">Run circles around your Activity rings. Move. Exercise. Stand. The Activity app can track your daily activity. You can easily pause your rings or adjust your goals for each day of the week.</div>
+       <div className="text-base pt-2">Run circles around your Activity rings. Move. Exercise. Stand. The Activity app can track your daily activity. You can easily pause your rings or adjust your goals for each day of the week.</div>
        </div>
-       <div className="relative -translate-x-50 -translate-y-90" style={{backgroundImage: `url(${watch2})`, width: 950, height: 950, backgroundSize: "contain", backgroundRepeat: "no-repeat" }}></div>
+       <div className="w-[500px] h-[500px] relative md:-translate-x-30 md:-translate-y-60 lg:-translate-x-50 lg:-translate-y-90 md:w-[600px] md:h-[600px] lg:w-[950px] lg:h-[950px]" style={{backgroundImage: `url(${watch2})`, backgroundSize: "contain", backgroundRepeat: "no-repeat" }}></div>
+      </div>
       </div>
       <div className="text-white relative w-full h-[1900px]">
        <div className="absolute inset-0" style={{backgroundImage: `url(${girlrunning})`, backgroundSize: "cover", backgroundRepeat: "no-repeat"}}>
