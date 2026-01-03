@@ -62,7 +62,7 @@ export default function App() {
         const entry1 = entries1[0];
 
         if (entry1.isIntersecting) {
-          bgRef.classList.add("bg-fixed", "bg-blur");
+          bgRef.classList.add("bg-fixed ", "bg-blur ");
         } 
       }, { threshold: 0.5 }
     );
@@ -117,84 +117,89 @@ export default function App() {
       <button className="w-20 h-20 bg-amber-700" onClick={prevSlide}>prev</button>
       <button className="w-20 h-20 bg-amber-700" onClick={nextSlide}>next</button>
       </div>
-      <div className="relative w-full h-[2550px]">
-      <div ref={bg} className="absolute inset-0 transition-all duration-2000" style={{backgroundImage: `url(${women})`, 
+      <div className="relative w-full h-[1500px] pt-30">
+        <div ref={bg} className="absolute inset-0 transition-all duration-2000" style={{backgroundImage: `url(${women})`, 
       backgroundSize: "cover", backgroundPosition: "center"}}>
-      </div>
-      <div className="relative px-5 mx-auto pt-30 md:max-w-200 lg:max-w-300">
-      <div className="mx-auto max-w-110">
+        </div>
+      <div className="absolute mx-auto max-w-300 ml-50">
       <div className="text-white font-bold md:ml-[15%] lg:ml-[50%]">
       <div className="text-[#50c1fc] text-xl md:text-2xl md:mb-5 lg:text-3xl">Health</div> 
       <div className="text-5xl md:text-6xl md:w-120 lg:text-8xl">Know <br className="hidden md:hidden" />your body<br /> by heart.</div>
       <div className="mt-5 text-base max-w-110 md:text-base md:w-130 md:mt-10 md:max-w-150 lg:text-2xl lg:max-w-120">The more insights you have, the more empowered you are to take action. From the ECG app to the Vitals app and more, Apple Watch Series 11 provides a bigger picture of your health, so you can stay informed. And now Series 11 takes the next big step in heart health with a pioneering feature — hypertension notifications.</div>
       </div>
       </div>
-      <div className="max-w-300 mx-auto pt-70">
-      <div className="text-white font-bold">
-        <div ref={trigger1} className=" text-6xl max-w-180">Get notified of chronic high blood pressure.</div>
-        <div className="mt-6 text-2xl max-w-230">Hypertension, or high blood pressure, impacts over 1.3 billion adults worldwide and is a leading cause of heart attack, stroke and kidney disease. The condition frequently goes undiagnosed because it often has no symptoms — and even during a doctor’s visit, with a single measurement it can be easily missed.</div>
       </div>
-      <div className="flex gap-15 text-white text-base mt-20 max-w-300">
-        <div className="max-w-100">
+      <div className="relative w-full h-[2000px]">
+      <div ref={bg} className="absolute inset-0 transition-all duration-2000" style={{backgroundImage: `url(${women})`, 
+      backgroundSize: "cover", backgroundPosition: "center"}}>
+        <div className="absolute inset-0 bg-black/50 backdrop-blur-xl"></div>
+      </div>
+      <div className="relative px-5 mx-auto pt-30 md:max-w-200 lg:max-w-300">
+      
+      <div className="mx-auto pt-10 max-w-100 md:max-w-300 md:pr-5 md:pl-5 lg:max-w-300">
+      <div className="text-white font-bold">
+        <div ref={trigger1} className="text-3xl max-w-100 md:text-4xl lg:text-5xl lg:max-w-160">Get notified of chronic high blood pressure.</div>
+        <div className="mt-6 text-base max-w-120 md:text-xl md:max-w-170 lg:text-2xl lg:max-w-200">Hypertension, or high blood pressure, impacts over 1.3 billion adults worldwide and is a leading cause of heart attack, stroke and kidney disease. The condition frequently goes undiagnosed because it often has no symptoms — and even during a doctor’s visit, with a single measurement it can be easily missed.</div>
+      </div>
+      <div className=" text-white mt-20 text-sm md:text-base md:grid md:grid-cols-2 md:grid-rows-2 md:gap-x-8 md:gap-y-10 lg:flex lg:gap-10 lg:max-w-300">
+        <div className="mb-10 max-w-100 md:mb-0 md:max-w-85 lg:max-w-70">
         <div className="mb-4" 
         style={{backgroundImage: `url(${ring})`, width: 35, height:45, backgroundRepeat: "no-repeat", backgroundSize: "cover"}}></div>
         <div>Receive hypertension notifications, just by wearing your watch. Series 11 can notify you if it identifies patterns of hypertension.1 How? The optical sensor provides data to an algorithm that can detect potential hypertension by analysing how your blood vessels respond to beats of the heart over 30‑day periods.</div>
         </div>
-        <div className="max-w-100">
+        <div className="mb-10 max-w-100 md:mb-0 md:max-w-85 lg:max-w-70">
         <div className="mb-4"  
         style={{backgroundImage: `url(${react})`, width: 35, height:45, backgroundRepeat: "no-repeat", backgroundSize: "cover"}}></div>
         <div>Ground­breaking insights. Grounded in science. We developed hypertension notifications using advanced machine learning methods and a series of studies, totalling over 100,000 participants. The feature was then validated in a clinical study.</div>
         </div>
-        <div className="max-w-100">
+        <div className="max-w-100 md:max-w-85 lg:max-w-70">
         <div className="mb-2"  
         style={{backgroundImage: `url(${health})`, width: 35, height:54, backgroundRepeat: "no-repeat", backgroundSize: "cover"}}></div>
         <div>Set up a blood pressure log. If you receive a hypertension notification and have access to a blood pressure cuff, you can track your blood pressure in the Health app on iPhone to create a report that will lead to more meaningful conversations with your healthcare provider.</div>
         </div>
       </div>
       </div>
-      <div className="text-white">
-      <div className="text-2xl pt-30 mb-5">More features to empower your health.</div>
-      <div className=" overflow-hidden flex gap-3">
-      <div className="flex flex-col">
-      <div className=" w-110 h-75 relative">
-      <div className="inset-0 absolute" style={{backgroundImage: `url(${apple1})`, borderRadius: 20, backgroundRepeat: "no-repeat", backgroundSize: "cover"}}></div>
       </div>
-      <div className="text-xs max-w-90 p-4">Wake up to your sleep score. Sleep quality is influenced by factors such as sleep duration, bed­time consistency, how often you wake up and time spent in each sleep stage. Sleep score analyses these factors every night and provides a classification and a score. You’ll see how the score is calculated, so you can understand the quality of your sleep and learn how to make it more restorative.</div>
+      <div className=" text-white absolute px-30">
+      <div className="font-bold text-3xl pt-30 mb-5">More features to empower your health.</div>
+      <div className="flex gap-3 overflow-x-scroll">
+      <div className="">
+      <div className="lg:w-[700px] lg:h-[500px] relative">
+      <div className="inset-0 absolute" style={{backgroundImage: `url(${apple1})`, backgroundPosition: "center",borderRadius: 20, backgroundRepeat: "no-repeat", backgroundSize: "cover"}}></div>
       </div>
-      <div className="flex flex-col">
-      <div className=" w-110 h-75 relative">
-      <div className="inset-0 absolute" style={{backgroundImage: `url(${apple2})`, borderRadius: 20, backgroundRepeat: "no-repeat", backgroundSize: "cover"}}></div>
+      <div className="text-base max-w-130 p-4">Wake up to your sleep score. Sleep quality is influenced by factors such as sleep duration, bed­time consistency, how often you wake up and time spent in each sleep stage. Sleep score analyses these factors every night and provides a classification and a score. You’ll see how the score is calculated, so you can understand the quality of your sleep and learn how to make it more restorative.</div>
       </div>
-      <div className="text-xs max-w-90 p-4">Keep an eye on sleep apnoea. Sleep apnoea is a condition where people experience repeated interruptions in their regular respiratory pattern during sleep. If untreated, it can lead to increased risk of hypertension, type 2 diabetes, cardiac issues and more. Series 11 can monitor for breathing disturbances over time and notify you of possible sleep apnoea.11</div>
+      <div className="">
+      <div className="lg:w-[440px] lg:h-[500px] relative">
+      <div className="inset-0 absolute" style={{backgroundImage: `url(${apple2})`, backgroundPosition: "center", borderRadius: 20, backgroundRepeat: "no-repeat", backgroundSize: "cover"}}></div>
       </div>
-      <div className="flex flex-col">
-      <div className=" w-110 h-75 relative">
-      <div className="inset-0 absolute" style={{backgroundImage: `url(${apple3})`, borderRadius: 20, backgroundRepeat: "no-repeat", backgroundSize: "cover"}}></div>
+      <div className="mx-auto text-base max-w-100 p-4">Keep an eye on sleep apnoea. Sleep apnoea is a condition where people experience repeated interruptions in their regular respiratory pattern during sleep. If untreated, it can lead to increased risk of hypertension, type 2 diabetes, cardiac issues and more. Series 11 can monitor for breathing disturbances over time and notify you of possible sleep apnoea.</div>
       </div>
-      <div className="text-xs max-w-90 p-4">The Vitals app. Your daily health status, ASAP. Quickly see your overnight health data — including heart rate, respiratory rate, wrist temperature, blood oxygen and sleep duration — and get notified if multiple metrics are ever outside your typical range.6</div>
+      <div className="">
+      <div className="lg:w-[440px] lg:h-[500px] relative">
+      <div className="inset-0 absolute" style={{backgroundImage: `url(${apple3})`, backgroundPosition: "center", borderRadius: 20, backgroundRepeat: "no-repeat", backgroundSize: "cover"}}></div>
       </div>
-      <div className="flex flex-col">
-      <div className=" w-110 h-75 relative">
-      <div className="inset-0 absolute" style={{backgroundImage: `url(${apple4})`, borderRadius: 20, backgroundRepeat: "no-repeat", backgroundSize: "cover"}}></div>
+      <div className="mx-auto text-base max-w-100 p-4">The Vitals app. Your daily health status, ASAP. Quickly see your overnight health data — including heart rate, respiratory rate, wrist temperature, blood oxygen and sleep duration — and get notified if multiple metrics are ever outside your typical range.6</div>
       </div>
-      <div className="text-xs max-w-90 p-4">Follow your heart on the ECG app. With Series 11 you can check for signs of atrial fibrillation, or AF, right from your wrist by using the ECG app to generate a single‑lead electrocardiogram.12</div>
+      <div className="">
+      <div className="lg:w-[750px] lg:h-[500px] relative">
+      <div className="inset-0 absolute" style={{backgroundImage: `url(${apple4})`, backgroundPosition: "center", borderRadius: 20, backgroundRepeat: "no-repeat", backgroundSize: "cover"}}></div>
       </div>
-      <div className="flex flex-col">
-      <div className=" w-110 h-75 relative">
-      <div className="inset-0 absolute" style={{backgroundImage: `url(${apple5})`, borderRadius: 20, backgroundRepeat: "no-repeat", backgroundSize: "cover"}}></div>
+      <div className="text-base max-w-130 p-4">Follow your heart on the ECG app. With Series 11 you can check for signs of atrial fibrillation, or AF, right from your wrist by using the ECG app to generate a single‑lead electrocardiogram.12</div>
       </div>
-      <div className="text-xs max-w-90 p-4">Stay on the pulse with the Heart Rate app. You can check your heart rate at any time — and get automatic notifications for a high or low heart rate or an irregular rhythm.13</div>
+      <div className="">
+      <div className="lg:w-[440px] lg:h-[500px] relative">
+      <div className="inset-0 absolute" style={{backgroundImage: `url(${apple5})`, backgroundPosition: "center", borderRadius: 20, backgroundRepeat: "no-repeat", backgroundSize: "cover"}}></div>
       </div>
-      <div className="flex flex-col">
-      <div className=" w-110 h-75 relative">
-      <div className="inset-0 absolute" style={{backgroundImage: `url(${apple6})`, borderRadius: 20, backgroundRepeat: "no-repeat", backgroundSize: "cover"}}></div>
+      <div className="mx-auto text-base max-w-100 p-4">Stay on the pulse with the Heart Rate app. You can check your heart rate at any time — and get automatic notifications for a high or low heart rate or an irregular rhythm.13</div>
       </div>
-      <div className="text-xs max-w-90 p-4">Cycle Tracking keeps you in the loop. Since cycles vary, the best way to understand what’s normal for you is by tracking your menstrual cycle. You can use Cycle Tracking to log your period, record symptoms and get predictions about your next period or fertile window.14 It can also notify you if a cycle deviation is detected.</div>
+      <div className="">
+      <div className="lg:w-[440px] lg:h-[500px] relative">
+      <div className="inset-0 absolute" style={{backgroundImage: `url(${apple6})`, backgroundPosition: "center", borderRadius: 20, backgroundRepeat: "no-repeat", backgroundSize: "cover"}}></div>
       </div>
+      <div className="mx-auto text-base max-w-100 p-4">Cycle Tracking keeps you in the loop. Since cycles vary, the best way to understand what’s normal for you is by tracking your menstrual cycle. You can use Cycle Tracking to log your period, record symptoms and get predictions about your next period or fertile window.14 It can also notify you if a cycle deviation is detected.</div>
       </div>
-      
-      
-      </div>
+      </div>      
       </div>
       </div>
       <div className="p-5 mb-15 md:mb-0">
