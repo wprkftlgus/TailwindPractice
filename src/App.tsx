@@ -42,7 +42,7 @@ export default function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       nextSlide();
-    }, 4500);
+    }, 450000);
     return() => clearTimeout(timer);
   }, [currentIndex]);
 
@@ -93,31 +93,40 @@ export default function App() {
       </div>
       </div>
       </div>
-      <div className="w-full">
-      <div className="mx-auto w-400 font-bold text-5xl pb-15 pt-25">Get the highlights.</div>
-      </div>
-      <div className="w-200 overflow-hidden">
+      <div className="pl-5 pr-5">
+      <div className="mx-auto max-w-320 font-bold text-3xl pb-10 md:pb-20 pt-50 md:text-6xl">Get the highlights.</div>
+      <div className="md:max-w-370 lg:max-w-340 mx-auto md:pl-5 md:pr-5">
         <div 
-        className="flex transition-transform duration-500 ease-in-out"
-        style={{ transform: `translateX(-${currentIndex * 100}%)`}}>
+        className="relative flex gap-10 transition-transform duration-500 ease-in-out h-[500px] md:h-[700px] lg:h-[900px]"
+        style={{ transform: `translateX(calc(-${currentIndex} * (100% + 40px)))`}}>
         {images.map((img, index) => (
-          <img key={index} src={img}  className="w-full flex-shrink-0"/>
+          <div className="relative w-full flex-shrink-0">
+          <img key={index} src={img} className={`absolute w-full object-cover flex-shrink-0 h-[400px] md:h-[600px] lg:h-[800px]
+          ${index === 1 ? "object-[50%_20%]" : ""}`}
+          style={{borderRadius: 30}}/>
+          {index === 0 && (<div className="relative font-bold mt-5 mx-auto max-w-100 pr-5 pl-5 md:mt-10 md:ml-15 md:text-xl md:max-w-130 lg:text-2xl lg:text-center lg:max-w-170 lg:mx-auto lg:mt-15">Turn resolutions into routines. Quit quitting your fitness goals with Apple Watch Series 11.</div>)}
+          {index === 1 && (<div className="relative font-bold pl-5 top-10 max-w-50 md:top-0 md:mt-20 md:ml-15 md:text-xl md:max-w-80 md:text-xl lg:text-2xl lg:top-80 lg:left-10 lg:max-w-90">Sleep score gives you an easy way to track and help improve the quality of your Zzz.</div>)}
+          {index === 2 && (<div className="relative max-w-50 pl-5 font-bold top-10 md:top-0 md:mt-20 md:ml-15 md:text-xl md:max-w-80 md:text-xl lg:top-80 lg:left-20 lg:text-2xl">Apple Watch Series 11 can spot signs of chronic high blood pressure and notify you of possible hypertension.</div>)}
+          {index === 3 && (<div className="relative top-10 mx-auto max-w-60 md:max-w-130 font-bold md:text-xl lg:text-2xl">Up to <div className="inline-block text-green-600">24 hours</div> of battery life. Do the things you love for longer.</div>)}
+          {index === 4 && (<div className="relative font-bold max-w-60 mx-auto md:mt-10 md:ml-15 md:text-xl md:max-w-130 lg:text-2xl lg:text-center lg:max-w-170 lg:mx-auto lg:mt-15">A glass display that’s 2x more scratch resistant than Series 10.3 Tough just got tougher.</div>)}
+          </div>
         ))}
         </div>
         
       </div>
       <button className="w-20 h-20 bg-amber-700" onClick={prevSlide}>prev</button>
       <button className="w-20 h-20 bg-amber-700" onClick={nextSlide}>next</button>
+      </div>
       <div className="relative w-full h-[2550px]">
       <div ref={bg} className="absolute inset-0 transition-all duration-2000" style={{backgroundImage: `url(${women})`, 
       backgroundSize: "cover", backgroundPosition: "center"}}>
       </div>
-      <div className="relative px-5 mx-auto pt-30">
-      <div className="md: lg:">
-      <div className="text-white font-bold md:ml-20 lg:ml-50">
+      <div className="relative px-5 mx-auto pt-30 md:max-w-200 lg:max-w-300">
+      <div className="mx-auto max-w-110">
+      <div className="text-white font-bold md:ml-[15%] lg:ml-[50%]">
       <div className="text-[#50c1fc] text-xl md:text-2xl md:mb-5 lg:text-3xl">Health</div> 
       <div className="text-5xl md:text-6xl md:w-120 lg:text-8xl">Know <br className="hidden md:hidden" />your body<br /> by heart.</div>
-      <div className="mt-5 text-base max-w-100 md:text-base md:w-130 md:mt-10 lg:text-2xl lg:w-100 ">The more insights you have, the more empowered you are to take action. From the ECG app to the Vitals app and more, Apple Watch Series 11 provides a bigger picture of your health, so you can stay informed. And now Series 11 takes the next big step in heart health with a pioneering feature — hypertension notifications.1</div>
+      <div className="mt-5 text-base max-w-110 md:text-base md:w-130 md:mt-10 md:max-w-150 lg:text-2xl lg:max-w-120">The more insights you have, the more empowered you are to take action. From the ECG app to the Vitals app and more, Apple Watch Series 11 provides a bigger picture of your health, so you can stay informed. And now Series 11 takes the next big step in heart health with a pioneering feature — hypertension notifications.</div>
       </div>
       </div>
       <div className="max-w-300 mx-auto pt-70">
@@ -207,14 +216,14 @@ export default function App() {
        <div className="order-3 mt-10 ml-20 md:mt-0 md:ml-0 md:order-none w-[500px] h-[500px] relative md:-translate-x-30 md:-translate-y-60 lg:-translate-x-50 lg:-translate-y-90 md:w-[600px] md:h-[600px] lg:w-[950px] lg:h-[950px]" style={{backgroundImage: `url(${watch2})`, backgroundSize: "contain", backgroundRepeat: "no-repeat" }}></div>
       </div>
       </div>
-      <div className="text-white relative w-full h-[1900px]">
-       <div className="absolute inset-0 pl-10 pr-10" style={{backgroundImage: `url(${girlrunning})`, backgroundSize: "cover", backgroundRepeat: "no-repeat"}}>
+      <div className="text-white relative w-full h-[1800px]">
+       <div className="absolute inset-0 pl-10 pr-10" style={{backgroundImage: `url(${girlrunning})`, width: "100%" ,backgroundSize: "cover", backgroundPosition: "50% 0%",backgroundRepeat: "no-repeat"}}>
        <div className="mx-auto max-w-110 md:mx-0 md:max-w-100 pt-35 lg:max-w-300">
        <div className="font-bold text-3xl md:text-4xl lg:text-5xl lg:max-w-80 mb-6">To know you <br className="hidden lg:block"/> is to <br className="hidden md:block"/> move you.</div> 
        <div className="text-xl md:max-w-120 md:text-xl lg:text-2xl lg:max-w-110">Now, in addition to detailed insights, Apple Watch Series 11 provides personalised fitness encouragement. With Apple Intelligence from your nearby iPhone, Workout Buddy gives you audible motivation in real time. Together with Workout media, Heart Rate Zones and Custom Workouts, there are even more brains behind the burn.</div>
        </div>
        <div className="mx-auto w-200 pt-35">
-        <div className="ml-100">
+        <div className="absolute bottom-10 ml-100">
         <div className="relative inset-0 items-center bg-center" style={{backgroundImage: `url(${color})` ,width: 600, height: 200 ,backgroundSize: "cover", backgroundRepeat: "no-repeat"}}>
           <div className="text-5xl font-bold w-120 mb-3">Way to go! That was your fastest 5K ever.</div> 
         </div>
