@@ -35,10 +35,7 @@ export default function App() {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [currentContent, setCurrentContent] = useState<number>(0);
   const nextSlide = () => {
-    setCurrentIndex((prev) => prev === images.length -1 ? 0 : prev + 1)
-  }
-  const prevSlide = () => {
-    setCurrentIndex((prev) => prev === 0 ? images.length - 1 : prev - 1)
+    setCurrentIndex((prev) => {if(prev === 4 ) setCurrentIndex(0); return prev +1 ;})
   }
   const nextContent = () => {
     setCurrentContent((prev) => {if(prev === 4 ) return prev; return prev +1 ;})
@@ -46,10 +43,11 @@ export default function App() {
   const prevContent = () => {
     setCurrentContent((prev) => {if(prev === 0 ) return prev; return prev -1 ;})
   }
+
   useEffect(() => {
     const timer = setTimeout(() => {
       nextSlide();
-    }, 4500);
+    }, 3500);
     return() => clearTimeout(timer);
   }, [currentIndex]);
 
@@ -100,29 +98,27 @@ export default function App() {
       </div>
       </div>
       </div>
-      <div className="pl-5 pr-5">
+      <div className="pl-15 pr-15 pb-30">
       <div className="mx-auto max-w-320 font-bold text-3xl pb-10 md:pb-20 pt-50 md:text-6xl">Get the highlights.</div>
       <div className="md:max-w-370 lg:max-w-340 mx-auto md:pl-5 md:pr-5">
         <div 
         className="relative flex gap-10 transition-transform duration-900 ease-in-out h-[500px] md:h-[700px] lg:h-[900px]"
         style={{ transform: `translateX(calc(-${currentIndex} * (100% + 40px)))`}}>
         {images.map((img, index) => (
-          <div className="relative w-full flex-shrink-0">
-          <img key={index} src={img} className={`absolute w-full object-cover flex-shrink-0 h-[400px] md:h-[600px] lg:h-[800px]
+          <div onClick={() => setCurrentIndex(index)} className="group relative w-full flex-shrink-0 cursor-pointer">
+          <img key={index} src={img} className={`group-hover:-translate-y-2 absolute w-full object-cover flex-shrink-0 h-[400px] hover:shadow-2xl  transition-all duration-200 md:h-[600px] lg:h-[800px]
           ${index === 1 ? "object-[50%_20%]" : ""}`}
           style={{borderRadius: 30}}/>
-          {index === 0 && (<div className="relative font-bold mt-5 mx-auto max-w-100 pr-5 pl-5 md:mt-10 md:ml-15 md:text-xl md:max-w-130 lg:text-2xl lg:text-center lg:max-w-170 lg:mx-auto lg:mt-15">Turn resolutions into routines. Quit quitting your fitness goals with Apple Watch Series 11.</div>)}
-          {index === 1 && (<div className="relative font-bold pl-5 top-10 max-w-50 md:top-0 md:mt-20 md:ml-15 md:text-xl md:max-w-80 md:text-xl lg:text-2xl lg:top-80 lg:left-10 lg:max-w-90">Sleep score gives you an easy way to track and help improve the quality of your Zzz.</div>)}
-          {index === 2 && (<div className="relative max-w-50 pl-5 font-bold top-10 md:top-0 md:mt-20 md:ml-15 md:text-xl md:max-w-80 md:text-xl lg:top-80 lg:left-20 lg:text-2xl">Apple Watch Series 11 can spot signs of chronic high blood pressure and notify you of possible hypertension.</div>)}
-          {index === 3 && (<div className="relative top-10 mx-auto max-w-60 md:max-w-130 font-bold md:text-xl lg:text-2xl">Up to <div className="inline-block text-green-600">24 hours</div> of battery life. Do the things you love for longer.</div>)}
-          {index === 4 && (<div className="relative font-bold max-w-60 mx-auto md:mt-10 md:ml-15 md:text-xl md:max-w-130 lg:text-2xl lg:text-center lg:max-w-170 lg:mx-auto lg:mt-15">A glass display that’s 2x more scratch resistant than Series 10.3 Tough just got tougher.</div>)}
+          {index === 0 && (<div className="group-hover:-translate-y-2 transition-all duration-150 relative font-bold mt-5 mx-auto max-w-100 pr-5 pl-5 md:mt-10 md:ml-15 md:text-xl md:max-w-130 lg:text-2xl lg:text-center lg:max-w-170 lg:mx-auto lg:mt-10">Turn resolutions into routines. Quit quitting your fitness goals with Apple Watch Series 11.</div>)}
+          {index === 1 && (<div className="group-hover:-translate-y-2 transition-all duration-150 relative font-bold pl-5 top-10 max-w-50 md:top-0 md:mt-20 md:ml-5 md:text-xl md:max-w-80 md:text-xl lg:text-2xl lg:top-80 lg:left-10 lg:max-w-90">Sleep score gives you an easy way to track and help improve the quality of your Zzz.</div>)}
+          {index === 2 && (<div className="group-hover:-translate-y-2 transition-all duration-150 relative max-w-50 pl-5 font-bold top-10 md:top-0 md:mt-20 md:ml-5 md:text-xl md:max-w-80 md:text-xl lg:top-80 lg:left-10 lg:text-2xl">Apple Watch Series 11 can spot signs of chronic high blood pressure and notify you of possible hypertension.</div>)}
+          {index === 3 && (<div className="group-hover:-translate-y-2 transition-all duration-150 relative top-4 pr-5 pl-5 md:top-10 mx-auto max-w-60 md:max-w-130 font-bold md:text-xl lg:text-2xl">Up to <div className="inline-block text-green-600">24 hours</div> of battery life. Do the things you love for longer.</div>)}
+          {index === 4 && (<div className="group-hover:-translate-y-2 transition-all duration-150 relative font-bold pr-3 pl-3 max-w-70 mx-auto mt-4 md:mt-10 md:ml-15 md:text-xl md:max-w-130 lg:text-2xl lg:text-center lg:max-w-170 lg:mx-auto lg:mt-10">A glass display that’s 2x more scratch resistant than Series 10.3 Tough just got tougher.</div>)}
           </div>
         ))}
         </div>
         
       </div>
-      <button className="w-20 h-20 bg-amber-700" onClick={prevSlide}>prev</button>
-      <button className="w-20 h-20 bg-amber-700" onClick={nextSlide}>next</button>
       </div>
       <div className="relative w-full h-[1500px] pt-30">
         <div ref={bg} className="absolute inset-0 transition-all duration-2000" style={{backgroundImage: `url(${women})`, 
@@ -168,8 +164,8 @@ export default function App() {
       <div className="mx-auto relative text-white font-bold pt-30 text-2xl mb-10 md:mx-0 md:mb-15 md:text-3xl">More features to empower your health.</div>
       </div>
       </div>
-      <div className=" text-white absolute px-[10%] md:px-10">
-      <div className=" flex gap-6 transition-all duration-800"
+      <div className="text-white absolute px-[10%] md:px-10">
+      <div className="flex gap-6 transition-all duration-800"
       style={{ transform: `translateX(-${currentContent * 20}%)`}}>
       <div className="">
       <div className="w-[270px] h-[300px] md:w-[700px] md:h-[500px] relative">
