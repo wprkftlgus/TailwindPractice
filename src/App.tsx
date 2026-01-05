@@ -120,12 +120,12 @@ export default function App() {
         
       </div>
       </div>
-      <div className="relative w-full h-[1500px] pt-30">
+      <div className="relative w-full h-[1000px] md:h-[1500px] pt-30">
         <div ref={bg} className="absolute inset-0 transition-all duration-2000" style={{backgroundImage: `url(${women})`, 
       backgroundSize: "cover", backgroundPosition: "center"}}>
         </div>
-      <div className="absolute mx-auto max-w-300 ml-50">
-      <div className="text-white font-bold md:ml-[15%] lg:ml-[50%]">
+      <div className="relative mx-auto max-w-100 pl-5 pr-5 lg:ml-50 lg:max-w-500">
+      <div className="text-white font-bold md:ml-[10%] lg:ml-[40%]">
       <div className="text-[#50c1fc] text-xl md:text-2xl md:mb-5 lg:text-3xl">Health</div> 
       <div className="text-5xl md:text-6xl md:w-120 lg:text-8xl">Know <br className="hidden md:hidden" />your body<br /> by heart.</div>
       <div className="mt-5 text-base max-w-110 md:text-base md:w-130 md:mt-10 md:max-w-150 lg:text-2xl lg:max-w-120">The more insights you have, the more empowered you are to take action. From the ECG app to the Vitals app and more, Apple Watch Series 11 provides a bigger picture of your health, so you can stay informed. And now Series 11 takes the next big step in heart health with a pioneering feature — hypertension notifications.</div>
@@ -230,18 +230,19 @@ export default function App() {
        <div className="order-3 mt-10 ml-20 md:mt-0 md:ml-0 md:order-none w-[500px] h-[500px] relative md:-translate-x-30 md:-translate-y-60 lg:-translate-x-50 lg:-translate-y-90 md:w-[600px] md:h-[600px] lg:w-[950px] lg:h-[950px]" style={{backgroundImage: `url(${watch2})`, backgroundSize: "contain", backgroundRepeat: "no-repeat" }}></div>
       </div>
       </div>
-      <div className="text-white relative w-full h-[1800px]">
+      <div className="text-white relative w-full h-[1500px] md:h-[2000px]">
        <div className="absolute inset-0 pl-10 pr-10" style={{backgroundImage: `url(${girlrunning})`, width: "100%" ,backgroundSize: "cover", backgroundPosition: "50% 0%",backgroundRepeat: "no-repeat"}}>
-       <div className="mx-auto max-w-110 md:mx-0 md:max-w-100 pt-35 lg:max-w-300">
-       <div className="font-bold text-3xl md:text-4xl lg:text-5xl lg:max-w-80 mb-6">To know you <br className="hidden lg:block"/> is to <br className="hidden md:block"/> move you.</div> 
-       <div className="text-xl md:max-w-120 md:text-xl lg:text-2xl lg:max-w-110">Now, in addition to detailed insights, Apple Watch Series 11 provides personalised fitness encouragement. With Apple Intelligence from your nearby iPhone, Workout Buddy gives you audible motivation in real time. Together with Workout media, Heart Rate Zones and Custom Workouts, there are even more brains behind the burn.</div>
+       <div className="mx-auto max-w-130 pt-30 md:pt-50 md:max-w-250 lg:max-w-350">
+       <div className="font-bold text-4xl mb-5 md:mb-8 lg:text-6xl lg:max-w-140">To know you <br className="hidden "/> is to <br className="hidden md:block"/> move you.</div> 
+       <div className="font-bold text-xl md:w-[50%] md:text-xl lg:text-2xl lg:max-w-140">Now, in addition to detailed insights, Apple Watch Series 11 provides personalised fitness encouragement. With Apple Intelligence from your nearby iPhone, Workout Buddy gives you audible motivation in real time. Together with Workout media, Heart Rate Zones and Custom Workouts, there are even more brains behind the burn.</div>
        </div>
-       <div className="mx-auto w-200 pt-35">
-        <div className="absolute bottom-10 ml-100">
-        <div className="relative inset-0 items-center bg-center" style={{backgroundImage: `url(${color})` ,width: 600, height: 200 ,backgroundSize: "cover", backgroundRepeat: "no-repeat"}}>
-          <div className="text-5xl font-bold w-120 mb-3">Way to go! That was your fastest 5K ever.</div> 
-        </div>
-       <div className="text-base font-bold w-130">Meet your new Workout Buddy. A brand‑new text‑to‑speech model generates personalised pep talks using voice data from an Apple Fitness+ trainer, so it has the right energy, style and tone for a workout.4 Time to buddy up.</div>
+       <div className="mx-auto max-w-130 pt-170 md:pt-240 md:pr-10 md:ml-[45%] lg:ml-[60%]">
+        <div className="bottom-10">
+          <div className="font-bold text-2xl max-w-80 mb-5 md:text-3xl md:max-w-110 lg:max-w-140 lg:text-5xl lg:mb-10">Way to go! That was your fastest 5K ever.
+          <div className="relative inset-0 items-center bg-center" style={{backgroundImage: `url(${color})`,backgroundSize: "cover", backgroundRepeat: "no-repeat"}}>
+          </div>
+          </div> 
+       <div className="font-bold max-w-120 md:text-lg lg:max-w-130 lg:text-xl lg:max-w-140">Meet your new Workout Buddy. A brand‑new text‑to‑speech model generates personalised pep talks using voice data from an Apple Fitness+ trainer, so it has the right energy, style and tone for a workout.4 Time to buddy up.</div>
        </div>
        </div>
        </div>
