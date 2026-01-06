@@ -56,6 +56,25 @@ export default function App() {
   const bg = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return ;
+
+          const el = entry.target as HTMLElement;
+          const type = el.dataset.animate;
+
+          if (type === "fade-up"){
+            el.classList.add("-translate-y-5", "opacity-100");
+          }
+          observer.unobserve(el);
+        }) 
+      },{ threshold: 0.2 } 
+    ); 
+      document.querySelectorAll<HTMLElement>("[data-animate]").forEach(el => observer.observe(el));
+  }, []);
+
+  useEffect(() => {
     const triggerRef1 = trigger1.current;
     const triggerRef2 = trigger2.current;
     const bgRef = bg.current;
@@ -99,8 +118,8 @@ export default function App() {
       </div>
       </div>
       <div className="pl-15 pr-15 pb-30">
-      <div className="mx-auto max-w-320 font-bold text-3xl pb-10 md:pb-20 pt-50 md:text-6xl">Get the highlights.</div>
-      <div className="md:max-w-370 lg:max-w-340 mx-auto md:pl-5 md:pr-5">
+      <div data-animate="fade-up" className="transition-all duration-900 opacity-0 mx-auto max-w-320 font-bold text-3xl pb-10 md:pb-20 pt-50 md:text-6xl">Get the highlights.</div>
+      <div data-animate="fade-up" className="transition-all duration-900 opacity-0 delay-150 md:max-w-370 lg:max-w-340 mx-auto md:pl-5 md:pr-5">
         <div 
         className="relative flex gap-10 transition-transform duration-900 ease-in-out h-[500px] md:h-[700px] lg:h-[900px]"
         style={{ transform: `translateX(calc(-${currentIndex} * (100% + 40px)))`}}>
@@ -126,9 +145,9 @@ export default function App() {
         </div>
       <div className="relative mx-auto max-w-100 pl-5 pr-5 lg:ml-50 lg:max-w-500">
       <div className="text-white font-bold md:ml-[10%] lg:ml-[40%]">
-      <div className="text-[#50c1fc] text-xl md:text-2xl md:mb-5 lg:text-3xl">Health</div> 
-      <div className="text-5xl md:text-6xl md:w-120 lg:text-8xl">Know <br className="hidden md:hidden" />your body<br /> by heart.</div>
-      <div className="mt-5 text-base max-w-110 md:text-base md:w-130 md:mt-10 md:max-w-150 lg:text-2xl lg:max-w-120">The more insights you have, the more empowered you are to take action. From the ECG app to the Vitals app and more, Apple Watch Series 11 provides a bigger picture of your health, so you can stay informed. And now Series 11 takes the next big step in heart health with a pioneering feature — hypertension notifications.</div>
+      <div data-animate="fade-up" className="transition-all duration-800 opacity-0 text-[#50c1fc] text-xl md:text-2xl md:mb-5 lg:text-3xl">Health</div> 
+      <div data-animate="fade-up" className="transition-all duration-800 opacity-0 delay-100 text-5xl md:text-6xl md:w-120 lg:text-8xl">Know <br className="hidden md:hidden" />your body<br /> by heart.</div>
+      <div data-animate="fade-up" className="transition-all duration-800 opacity-0 delay-200 mt-5 text-base max-w-110 md:text-base md:w-130 md:mt-10 md:max-w-150 lg:text-2xl lg:max-w-120">The more insights you have, the more empowered you are to take action. From the ECG app to the Vitals app and more, Apple Watch Series 11 provides a bigger picture of your health, so you can stay informed. And now Series 11 takes the next big step in heart health with a pioneering feature — hypertension notifications.</div>
       </div>
       </div>
       </div>
@@ -141,30 +160,30 @@ export default function App() {
       
       <div className="mx-auto pt-10 max-w-120 md:max-w-300 md:pr-5 md:pl-5 lg:max-w-300">
       <div className="text-white font-bold">
-        <div ref={trigger1} className="text-3xl max-w-100 md:text-4xl lg:text-5xl lg:max-w-160">Get notified of chronic high blood pressure.</div>
-        <div className="mt-6 text-base max-w-120 md:text-xl md:max-w-170 lg:text-2xl lg:max-w-200">Hypertension, or high blood pressure, impacts over 1.3 billion adults worldwide and is a leading cause of heart attack, stroke and kidney disease. The condition frequently goes undiagnosed because it often has no symptoms — and even during a doctor’s visit, with a single measurement it can be easily missed.</div>
+        <div data-animate="fade-up" ref={trigger1} className="transition-all duration-800 opacity-0 text-3xl max-w-100 md:text-4xl lg:text-5xl lg:max-w-160">Get notified of chronic high blood pressure.</div>
+        <div data-animate="fade-up" className="transition-all duration-800 opacity-0 delay-100 mt-6 text-base max-w-120 md:text-xl md:max-w-170 lg:text-2xl lg:max-w-200">Hypertension, or high blood pressure, impacts over 1.3 billion adults worldwide and is a leading cause of heart attack, stroke and kidney disease. The condition frequently goes undiagnosed because it often has no symptoms — and even during a doctor’s visit, with a single measurement it can be easily missed.</div>
       </div>
       <div className=" text-white mt-20 text-sm md:text-base md:grid md:grid-cols-2 md:grid-rows-2 md:gap-x-8 md:gap-y-10 lg:flex lg:gap-10 lg:max-w-300">
-        <div className="mb-10 max-w-100 md:mb-0 md:max-w-85 lg:max-w-70">
+        <div data-animate="fade-up" className="transition-all duration-800 opacity-0 delay-200 mb-10 max-w-100 md:mb-0 md:max-w-85 lg:max-w-70">
         <div className="mb-4" 
         style={{backgroundImage: `url(${ring})`, width: 35, height:45, backgroundRepeat: "no-repeat", backgroundSize: "cover"}}></div>
         <div>Receive hypertension notifications, just by wearing your watch. Series 11 can notify you if it identifies patterns of hypertension.1 How? The optical sensor provides data to an algorithm that can detect potential hypertension by analysing how your blood vessels respond to beats of the heart over 30‑day periods.</div>
         </div>
-        <div className="mb-10 max-w-100 md:mb-0 md:max-w-85 lg:max-w-70">
+        <div data-animate="fade-up" className="transition-all duration-800 opacity-0 delay-300 mb-10 max-w-100 md:mb-0 md:max-w-85 lg:max-w-70">
         <div className="mb-4"  
         style={{backgroundImage: `url(${react})`, width: 35, height:45, backgroundRepeat: "no-repeat", backgroundSize: "cover"}}></div>
         <div>Ground­breaking insights. Grounded in science. We developed hypertension notifications using advanced machine learning methods and a series of studies, totalling over 100,000 participants. The feature was then validated in a clinical study.</div>
         </div>
-        <div className="max-w-100 md:max-w-85 lg:max-w-70">
+        <div data-animate="fade-up" className="transition-all duration-800 opacity-0 delay-400 max-w-100 md:max-w-85 lg:max-w-70">
         <div className="mb-2"  
         style={{backgroundImage: `url(${health})`, width: 35, height:54, backgroundRepeat: "no-repeat", backgroundSize: "cover"}}></div>
         <div>Set up a blood pressure log. If you receive a hypertension notification and have access to a blood pressure cuff, you can track your blood pressure in the Health app on iPhone to create a report that will lead to more meaningful conversations with your healthcare provider.</div>
         </div>
       </div>
-      <div className="mx-auto relative text-white font-bold pt-30 text-2xl mb-10 md:mx-0 md:mb-15 md:text-3xl">More features to empower your health.</div>
+      <div data-animate="fade-up" className="transition-all duration-800 opacity-0 mx-auto relative text-white font-bold pt-30 text-2xl mb-10 md:mx-0 md:mb-15 md:text-3xl">More features to empower your health.</div>
       </div>
       </div>
-      <div className="text-white absolute px-[10%] md:px-10">
+      <div data-animate="fade-up" className="transition-all duration-800 opacity-0 delay-50 text-white absolute px-[10%] md:px-10">
       <div className="flex gap-6 transition-all duration-800"
       style={{ transform: `translateX(-${currentContent * 20}%)`}}>
       <div className="">
@@ -213,91 +232,91 @@ export default function App() {
       </div>
       <div className="p-5 mb-15 md:mb-0">
       <div className="mx-auto max-w-120 mt-20 md:max-w-250 md:text-center">
-      <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#fa1858]">Fitness</div>
-      <div ref={trigger2} className="max-w-100 text-5xl mt-1 mb-5 md:mx-auto md:mt-5 md:mb-10 md:max-w-120 md:text-6xl lg:max-w-200 lg:text-8xl font-bold">Better by every measure.</div>
-      <div className="font-bold mx-auto max-w-150 md:max-w-129 md:text-base lg:max-w-160 lg:text-2xl mb-20 text-gray-600">Whether you’re training for a marathon or swimming lengths, Apple Watch Series 11 serves up endless ways to work out. And it uses helpful metrics to count every move, so you know how to push harder and train smarter. Let’s go — the starting line is on your wrist.</div>
+      <div data-animate="fade-up" className="transition-all duration-800 opacity-0 text-2xl md:text-3xl lg:text-4xl font-bold text-[#fa1858]">Fitness</div>
+      <div data-animate="fade-up" ref={trigger2} className="transition-all duration-800 opacity-0 delay-100 max-w-100 text-5xl mt-1 mb-5 md:mx-auto md:mt-5 md:mb-10 md:max-w-120 md:text-6xl lg:max-w-200 lg:text-8xl font-bold">Better by every measure.</div>
+      <div data-animate="fade-up" className="transition-all duration-800 opacity-0 delay-200 font-bold mx-auto max-w-150 md:max-w-129 md:text-base lg:max-w-160 lg:text-2xl mb-20 text-gray-600">Whether you’re training for a marathon or swimming lengths, Apple Watch Series 11 serves up endless ways to work out. And it uses helpful metrics to count every move, so you know how to push harder and train smarter. Let’s go — the starting line is on your wrist.</div>
       </div>
       <div className="flex flex-col items-center mx-auto max-w-150 md:items-start md:max-w-250 lg:max-w-500 md:grid md:grid-cols-2 md:grid-rows-2 md:gap-x-40 lg:gap-x-60 lg:gap-y-1">
-       <div className="order-2 mt-10 w-[500px] h-[500px] mr-20 md:mt-0 md:order-none md:translate-x-[calc(50vw-500px)] lg:translate-x-[calc(40vw-600px)] md:w-[600px] md:h-[600px] lg:w-[950px] lg:h-[950px]" style={{backgroundImage: `url(${watch1})`, backgroundSize: "contain", backgroundRepeat: "no-repeat" }}></div>
-       <div className="order-1 md:order-none flex flex-col z-1 md:mt-5 max-w-120 md:max-w-90">
+       <div data-animate="fade-up" className="transition-all duration-800 opacity-0 delay-250 order-2 mt-10 w-[500px] h-[500px] mr-20 md:mt-0 md:order-none md:translate-x-[calc(50vw-500px)] lg:translate-x-[calc(40vw-600px)] md:w-[600px] md:h-[600px] lg:w-[950px] lg:h-[950px]" style={{backgroundImage: `url(${watch1})`, backgroundSize: "contain", backgroundRepeat: "no-repeat" }}></div>
+       <div data-animate="fade-up" className="transition-all duration-800 opacity-0 delay-200 order-1 md:order-none flex flex-col z-1 md:mt-5 max-w-120 md:max-w-90">
        <div style={{backgroundImage: `url(${run})`, width: 70, height: 70, backgroundSize: "contain", backgroundRepeat: "no-repeat" }}></div>
        <div className="md:text-base pt-2">A refreshed Workout app. An improved layout highlights four new corner buttons, making it even quicker to access your go‑to features like Pacer, Race Route and Custom Workout.</div>
        </div>
-       <div className="order-4 mt-10 flex flex-col max-w-110 md:mt-0 md:order-none md:max-w-90 z-1 md:translate-x-[calc(10vw-50px)] md:translate-y-40 lg:translate-x-[calc(45vw-450px)] lg:translate-y-90">
+       <div data-animate="fade-up" className="transition-all duration-800 opacity-0 delay-300 order-4 mt-10 flex flex-col max-w-110 md:mt-0 md:order-none md:max-w-90 z-1 md:translate-x-[calc(10vw-50px)] md:translate-y-40 lg:translate-x-[calc(45vw-450px)] lg:translate-y-90">
        <div style={{backgroundImage: `url(${clock})`, width: 70, height: 70, backgroundSize: "contain", backgroundRepeat: "no-repeat" }}></div>
        <div className="text-base pt-2">Run circles around your Activity rings. Move. Exercise. Stand. The Activity app can track your daily activity. You can easily pause your rings or adjust your goals for each day of the week.</div>
        </div>
-       <div className="order-3 mt-10 ml-20 md:mt-0 md:ml-0 md:order-none w-[500px] h-[500px] relative md:-translate-x-30 md:-translate-y-60 lg:-translate-x-50 lg:-translate-y-90 md:w-[600px] md:h-[600px] lg:w-[950px] lg:h-[950px]" style={{backgroundImage: `url(${watch2})`, backgroundSize: "contain", backgroundRepeat: "no-repeat" }}></div>
+       <div data-animate="fade-up" className="transition-all duration-800 opacity-0 delay-300 order-3 mt-10 ml-20 md:mt-0 md:ml-0 md:order-none w-[500px] h-[500px] relative md:-translate-x-30 md:-translate-y-60 lg:-translate-x-50 lg:-translate-y-90 md:w-[600px] md:h-[600px] lg:w-[950px] lg:h-[950px]" style={{backgroundImage: `url(${watch2})`, backgroundSize: "contain", backgroundRepeat: "no-repeat" }}></div>
       </div>
       </div>
       <div className="text-white relative w-full h-[1500px] md:h-[2000px]">
        <div className="absolute inset-0 pl-10 pr-10" style={{backgroundImage: `url(${girlrunning})`, width: "100%" ,backgroundSize: "cover", backgroundPosition: "50% 0%",backgroundRepeat: "no-repeat"}}>
        <div className="mx-auto max-w-130 pt-30 md:pt-50 md:max-w-250 lg:max-w-350">
-       <div className="font-bold text-4xl mb-5 md:mb-8 lg:text-6xl lg:max-w-140">To know you <br className="hidden "/> is to <br className="hidden md:block"/> move you.</div> 
-       <div className="font-bold text-xl md:w-[50%] md:text-xl lg:text-2xl lg:max-w-140">Now, in addition to detailed insights, Apple Watch Series 11 provides personalised fitness encouragement. With Apple Intelligence from your nearby iPhone, Workout Buddy gives you audible motivation in real time. Together with Workout media, Heart Rate Zones and Custom Workouts, there are even more brains behind the burn.</div>
+       <div data-animate="fade-up" className="transition-all duration-800 opacity-0 font-bold text-4xl mb-5 md:mb-8 lg:text-6xl lg:max-w-140">To know you <br className="hidden "/> is to <br className="hidden md:block"/> move you.</div> 
+       <div data-animate="fade-up" className="transition-all duration-800 opacity-0 delay-100 font-bold text-xl md:w-[50%] md:text-xl lg:text-2xl lg:max-w-140">Now, in addition to detailed insights, Apple Watch Series 11 provides personalised fitness encouragement. With Apple Intelligence from your nearby iPhone, Workout Buddy gives you audible motivation in real time. Together with Workout media, Heart Rate Zones and Custom Workouts, there are even more brains behind the burn.</div>
        </div>
        <div className="mx-auto max-w-130 pt-170 md:pt-240 md:pr-10 md:ml-[45%] lg:ml-[60%]">
         <div className="bottom-10">
-          <div className="font-bold text-2xl max-w-80 mb-5 md:text-3xl md:max-w-110 lg:max-w-140 lg:text-5xl lg:mb-10">Way to go! That was your fastest 5K ever.
+          <div data-animate="fade-up" className="transition-all duration-800 opacity-0 font-bold text-2xl max-w-80 mb-5 md:text-3xl md:max-w-110 lg:max-w-140 lg:text-5xl lg:mb-10">Way to go! That was your fastest 5K ever.
           <div className="relative inset-0 items-center bg-center" style={{backgroundImage: `url(${color})`,backgroundSize: "cover", backgroundRepeat: "no-repeat"}}>
           </div>
           </div> 
-       <div className="font-bold max-w-120 md:text-lg lg:max-w-130 lg:text-xl lg:max-w-140">Meet your new Workout Buddy. A brand‑new text‑to‑speech model generates personalised pep talks using voice data from an Apple Fitness+ trainer, so it has the right energy, style and tone for a workout.4 Time to buddy up.</div>
+       <div data-animate="fade-up" className="transition-all duration-800 opacity-0 delay-100 font-bold max-w-120 md:text-lg lg:max-w-130 lg:text-xl lg:max-w-140">Meet your new Workout Buddy. A brand‑new text‑to‑speech model generates personalised pep talks using voice data from an Apple Fitness+ trainer, so it has the right energy, style and tone for a workout.4 Time to buddy up.</div>
        </div>
        </div>
        </div>
       </div>
       <div className="max-w-120 md:max-w-300 mx-auto pb-50 pt-30 pr-5 pl-5 lg:max-w-250">
       <div className="md:text-center mx-auto">
-      <div className="font-bold text-[#fa1858] text-2xl md:text-3xl">Safety</div>
-      <div className="text-5xl mt-3 mb-5 md:text-6xl md:mt-5 md:mb-10 lg:text-8xl font-bold">A real lifeline</div>
-      <div className="font-bold text-lg md:text-xl md:max-w-160 lg:text-2xl lg:max-w-220 mx-auto mb-10 text-gray-600">Packed with innova­tive safety firsts, Apple Watch Series 11 has your back. It’s designed to summon help when you need it most — even if you can’t reach your iPhone.</div>
+      <div data-animate="fade-up" className="transition-all duration-800 opacity-0 font-bold text-[#fa1858] text-2xl md:text-3xl">Safety</div>
+      <div data-animate="fade-up" className="transition-all duration-800 opacity-0 delay-100 text-5xl mt-3 mb-5 md:text-6xl md:mt-5 md:mb-10 lg:text-8xl font-bold">A real lifeline</div>
+      <div data-animate="fade-up" className="transition-all duration-800 opacity-0 delay-200 font-bold text-lg md:text-xl md:max-w-160 lg:text-2xl lg:max-w-220 mx-auto mb-10 text-gray-600">Packed with innova­tive safety firsts, Apple Watch Series 11 has your back. It’s designed to summon help when you need it most — even if you can’t reach your iPhone.</div>
       </div>
-      <div className="mx-auto mb-10 md:mb-0 w-[350px] h-[350px] md:w-[700px] md:h-[700px] lg:w-[800px] lg:h-[800px]" style={{backgroundImage: `url(${watchmulti})`, backgroundSize: "cover"}}></div>
+      <div data-animate="fade-up" className="transition-all duration-800 opacity-0 delay-300 mx-auto mb-10 md:mb-0 w-[350px] h-[350px] md:w-[700px] md:h-[700px] lg:w-[800px] lg:h-[800px]" style={{backgroundImage: `url(${watchmulti})`, backgroundSize: "cover"}}></div>
       <div className="font-bold md:max-w-220 mx-auto md:grid md:grid-cols-3 md:grid-rows-2 md:gap-x-10 md:gap-y-3 lg:max-w-250 lg:gap-x-1.5 lg:gap-y-1">
-        <div className="mb-10 md:mb-0">
+        <div data-animate="fade-up" className="transition-all duration-800 opacity-0 mb-10 md:mb-0">
         <div style={{backgroundImage: `url(${icon1})`, width: 40, height: 50, backgroundSize: "cover"}}></div>
         <div className="mt-3 text-gray-700 md:text-base md:max-w-65 lg:text-lg md: lg:max-w-70">Emergency SOS. ASAP. Need urgent help? Just press and hold the side button on your Apple Watch Series 11 to try to call emergency services and share your location.</div>
         </div>
-        <div className="mb-10 md:mb-0">
+        <div data-animate="fade-up" className="transition-all duration-800 opacity-0 delay-100 mb-10 md:mb-0">
         <div style={{backgroundImage: `url(${icon2})`, width: 40, height: 50, backgroundSize: "cover"}}></div>
         <div className="mt-3 text-gray-700 md:text-base md:max-w-65 lg:text-lg md: lg:max-w-70">Fall Detection at the ready. If Series 11 detects that you’ve taken a hard fall, it can automatically help connect you with emergency services, provide call handlers with your location and notify loved ones.</div>
         </div>
-        <div className="mb-10 md:mb-0">
+        <div data-animate="fade-up" className="transition-all duration-800 opacity-0 delay-200 mb-10 md:mb-0">
         <div style={{backgroundImage: `url(${icon3})`, width: 40, height: 50, backgroundSize: "cover"}}></div>
         <div className="mt-3 text-gray-700 md:text-base md:max-w-65 lg:text-lg md: lg:max-w-70">Crash Detection. Your guardian on the go. If you’ve been in a serious car crash, Series 11 can automatically help call emergency services, share your location and notify your emergency contacts.</div>
         </div>
-        <div className="mb-10 md:mb-0">
+        <div data-animate="fade-up" className="transition-all duration-800 opacity-0 delay-300 mb-10 md:mb-0">
         <div style={{backgroundImage: `url(${icon4})`, width: 40, height: 50, backgroundSize: "cover"}}></div>
         <div className="mt-3 text-gray-700 md:text-base md:max-w-65 lg:text-lg md: lg:max-w-70">When you’re out, Check In. Your watch can automatically notify someone when you arrive at your destination. And if you’re going for a run after dark, you can start a Check In for the duration of your workout to let a friend know when you’re done.</div>
         </div>
-        <div className="mb-10 md:mb-0">
+        <div data-animate="fade-up" className="transition-all duration-800 opacity-0 delay-400 mb-10 md:mb-0">
         <div style={{backgroundImage: `url(${icon5})`, width: 40, height: 55, backgroundSize: "cover"}}></div>
         <div className="mt-3 text-gray-700 md:text-base md:max-w-65 lg:text-lg md: lg:max-w-70">Let Backtrack get you back on track. Backtrack in the Compass app uses GPS data to automatically create a path of where you’ve been when you’re off the grid. Easily add waypoints for anything of interest, like the trailhead or your campsite.</div>
         </div>
-        <div className="mb-10 md:mb-0">
+        <div data-animate="fade-up" className="transition-all duration-800 opacity-0 delay-500 mb-10 md:mb-0">
         <div style={{backgroundImage: `url(${icon6})`, width: 40, height: 50, backgroundSize: "cover"}}></div>
         <div className="mt-3 text-gray-700 md:text-base md:max-w-65 lg:text-lg md: lg:max-w-70">Set up your Medical ID. In an emergency, first responders are able to quickly access critical medical information — like allergies or medications — directly from your Series 11.</div>
         </div>
       </div>
       </div>
-      <div className="relative max-w-150 md:max-w-300 mx-auto pl-10 pr-10 md:pl-15 md:pr-15 pb-50 text-gray-900">
-      <div className="text-3xl font-bold mb-10 md:text-5xl ">Apple Watch</div>
-      <div className="lg:flex w-300 gap-5">
-      <div className="mr-12 font-bold text-xl md:text-2xl cursor-pointer">
-        <div className=" font-light text-lg cursor-auto text-[#6e6e73] mb-2">Explore Watch</div>
-        <div className="mb-2">Explore All Apple Watch</div>
-        <div className="mb-2">Apple Watch Series 11</div>
-        <div className="mb-2">Apple Watch SE 3</div>
-        <div className="mb-2">Apple Watch Ultra 3</div>
-        <div className="mb-2">Apple Watch Nike</div>
-        <div className="mb-2">Apple Watch Hermès</div>
-        <div className="text-base cursor-pointer font-bold">
+      <div className="relative max-w-150 md:max-w-360 mx-auto pl-10 pr-10 md:pl-15 md:pr-15 pb-50 text-gray-900">
+      <div data-animate="fade-up" className="transition-all duration-800 opacity-0 text-3xl font-bold mb-15 md:text-5xl lg:text-6xl">Apple Watch</div>
+      <div className="lg:flex max-w-300 gap-5">
+      <div data-animate="fade-up" className="inline-block transition-all duration-100 opacity-0 delay-700 mr-12 font-bold text-xl md:text-2xl">
+        <div className=" font-light text-lg text-[#6e6e73] mb-2">Explore Watch</div>
+        <div className="mb-2 cursor-pointer">Explore All Apple Watch</div>
+        <div className="mb-2 cursor-pointer">Apple Watch Series 11</div>
+        <div className="mb-2 cursor-pointer">Apple Watch SE 3</div>
+        <div className="mb-2 cursor-pointer">Apple Watch Ultra 3</div>
+        <div className="mb-2 cursor-pointer">Apple Watch Nike</div>
+        <div className="mb-2 cursor-pointer">Apple Watch Hermès</div>
+        <div className="inline-block text-base cursor-pointer font-bold">
          <div className="mt-5 mb-2 lg:mt-7 lg:mb-3 ">Compare Watch</div>
          <div>Why Apple Watch</div>
         </div>
       </div>
-      <div className="md:flex lg:flex-row mt-10 lg:mt-0 lg:gap-5">
+      <div data-animate="fade-up" className="transition-all duration-100 opacity-0 delay-750 md:flex lg:flex-row mt-10 lg:mt-0 lg:gap-5">
       <div className="mr-7 font-bold cursor-pointer">
         <div className=" font-light cursor-auto text-[#6e6e73] mb-2">Shop Watch</div>
         <div className="mb-2">Shop Apple Watch</div>
@@ -307,7 +326,7 @@ export default function App() {
         <div className="mb-2">Financing</div>
         <div className="mb-2">Personal Setup</div>
       </div>
-      <div className="mt-10 md:mt-0 font-bold cursor-pointer">
+      <div data-animate="fade-up" className="transition-all duration-100 opacity-0 delay-800 mt-15 md:mt-5 font-bold cursor-pointer">
         <div className="font-light cursor-auto text-[#6e6e73] mb-2">More from Watch</div>
         <div className="mb-2">Apple Watch Support</div>
         <div className="mb-2">AppleCare</div>
