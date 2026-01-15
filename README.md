@@ -6,12 +6,10 @@ A responsive clone of the Apple official website built to practice modern fronte
 
 This project focuses on smooth animations, automatic slide transitions, and responsive design across multiple screen sizes.
 
----
 
 ## 🔗 Live Demo
 https://tailwindpracticebysihyeon.netlify.app/
 
----
 
 ## 🔧 Tech Stack
 
@@ -21,7 +19,6 @@ https://tailwindpracticebysihyeon.netlify.app/
 - **JavaScript**
 - **TypeScript (partial)**
 
----
 
 ## ✨ Features
 
@@ -45,7 +42,6 @@ https://tailwindpracticebysihyeon.netlify.app/
   - Inspired by Apple's official website
   - Focus on spacing, typography, and smooth transitions
 
----
 
 ## 📱 Responsive Breakpoints
 
@@ -55,7 +51,6 @@ https://tailwindpracticebysihyeon.netlify.app/
 
 All layouts adapt seamlessly across devices.
 
----
 
 ## 📁 Installation & Setup
 
@@ -64,8 +59,9 @@ All layouts adapt seamlessly across devices.
 npm create vite@latest my-project
 npm install
 npm run dev
-
-```TailwindCSS
+```
+###TailwindCSS
+```bash
 npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
 ```
