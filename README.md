@@ -60,7 +60,7 @@ npm create vite@latest my-project
 npm install
 npm run dev
 ```
-###TailwindCSS
+### TailwindCSS
 ```bash
 npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
