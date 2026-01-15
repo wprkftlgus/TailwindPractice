@@ -1,73 +1,71 @@
-# React + TypeScript + Vite
+<img width="840" height="919" alt="1" src="https://github.com/user-attachments/assets/a89e727f-283d-4aa6-bed8-93dcf035cce2" />
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Apple Official Website Clone 🍎
 
-Currently, two official plugins are available:
+A responsive clone of the Apple official website built to practice modern frontend development and UI interactions.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project focuses on smooth animations, automatic slide transitions, and responsive design across multiple screen sizes.
 
-## React Compiler
+---
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+## 🔗 Live Demo
+https://tailwindpracticebysihyeon.netlify.app/
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🔧 Tech Stack
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Vite**
+- **HTML**
+- **Tailwind CSS**
+- **JavaScript**
+- **TypeScript (partial)**
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## ✨ Features
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- **Automatic Hero Slider**
+  - Implemented using `setTimeout`
+  - Slides automatically transition after a fixed time interval
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **Scroll-based Animations**
+  - Animations are triggered as sections enter the viewport
+  - Implemented using the `IntersectionObserver` API
+  - Enhances user engagement and visual dynamics
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- **Fully Responsive Design**
+  - Optimized for three screen sizes:
+    - Mobile
+    - Medium (Tablet)
+    - Large (Desktop)
+  - Built with Tailwind CSS responsive utilities
+
+- **Modern UI & Clean Layout**
+  - Inspired by Apple's official website
+  - Focus on spacing, typography, and smooth transitions
+
+---
+
+## 📱 Responsive Breakpoints
+
+- **Mobile**
+- **MD (Tablet)**
+- **LG (Desktop)**
+
+All layouts adapt seamlessly across devices.
+
+---
+
+## 📁 Installation & Setup
+
+### Vite
+```bash
+npm create vite@latest my-project
+npm install
+npm run dev
+
+```TailwindCSS
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
 ```
